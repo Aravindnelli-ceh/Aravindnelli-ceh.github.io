@@ -1,6 +1,0 @@
-globalssc-3d/
-├── index.html
-├── package.json
-└── src/
-    ├── main.jsx
-    └── styles.css
