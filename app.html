@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Rakhi Memory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  main{max-width:560px;margin:0 auto;padding:20px 16px 64px;}
+  header.app-head{text-align:center;margin-bottom:26px;}
+  header.app-head h1{font-size:clamp(28px,7vw,38px);}
+  header.app-head .sub{max-width:380px;margin:0 auto;}
+
+  .stepper{margin:30px 0 26px;}
+  .thread-track{position:relative;height:3px;background:var(--line);border-radius:3px;margin:0 22px;}
+  .thread-fill{
+    position:absolute;left:0;top:0;height:100%;
+    background:linear-gradient(90deg,var(--thread-red),var(--marigold));
+    border-radius:3px;width:0%;transition:width .5s cubic-bezier(.65,0,.35,1);
+  }
+  .knots{display:flex;justify-content:space-between;margin-top:-13px;padding:0 6px;}
+  .knot{
+    width:26px;height:26px;border-radius:50%;background:var(--ivory);border:2px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#9a8a7a;
+    transition:all .35s ease;position:relative;
+  }
+  .knot.active{border-color:var(--thread-red);color:var(--thread-red);transform:scale(1.08);}
+  .knot.done{background:var(--thread-red);border-color:var(--thread-red);color:var(--ivory);}
+  .knot.done::after{content:'✓';font-size:12px;}
+  .knot.done span{display:none;}
+  .step-labels{display:flex;justify-content:space-between;margin-top:8px;padding:0 2px;}
+  .step-labels span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.03em;color:#9a8a7a;width:60px;text-align:center;}
+  .step-labels span.active{color:var(--thread-red);font-weight:700;}
+
+  .panel{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;
+    box-shadow:0 18px 40px -22px rgba(92,17,41,0.25);animation:rise .45s ease both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .panel h2{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:0 0 4px;color:var(--maroon-deep);}
+  .panel p.hint{font-size:13px;color:#7a6a5c;margin:0 0 20px;line-height:1.5;}
+
+  label.field-label{
+    display:block;font-family:'Space Mono',monospace;font-size:10.5px;
+    letter-spacing:.05em;text-transform:uppercase;color:#8a7a6c;margin-bottom:6px;
+  }
+  .field{margin-bottom:18px;}
+  input[type=text]{
+    width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;
+    font-family:'Karla',sans-serif;font-size:15px;color:var(--ink);background:#fdfbf7;transition:border-color .2s;
+  }
+  input[type=text]:focus{outline:none;border-color:var(--thread-red);}
+  .relation-toggle{display:flex;gap:8px;}
+  .relation-toggle button{
+    flex:1;padding:10px;border-radius:10px;border:1.5px solid var(--line);
+    background:#fdfbf7;font-family:'Karla',sans-serif;font-size:14px;font-weight:700;
+    color:#7a6a5c;cursor:pointer;transition:all .2s;
+  }
+  .relation-toggle button.sel{background:var(--maroon);border-color:var(--maroon);color:#fff;}
+
+  .contest-field{
+    background:linear-gradient(135deg,#FFF6E6,#FCEBD0);border:1px solid var(--gold-soft);
+    border-radius:12px;padding:14px;
+  }
+  .contest-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13.5px;line-height:1.5;color:#5b4a3d;}
+  .contest-check input{margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:var(--thread-red);}
+  .story-box{
+    width:100%;margin-top:12px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;
+    font-family:'Karla',sans-serif;font-size:14px;resize:vertical;min-height:60px;background:#fffdf9;
+  }
+  .story-box:focus{outline:none;border-color:var(--thread-red);}
+
+  .wa-note{
+    margin-top:14px;padding:12px 14px;background:#EAFBF1;border:1px solid #bfe8cf;border-radius:12px;
+    font-size:12.5px;color:#256b42;line-height:1.5;
+  }
+
+  .upload-box{
+    border:1.5px dashed var(--line);border-radius:14px;padding:22px;text-align:center;
+    cursor:pointer;transition:border-color .2s, background .2s;position:relative;overflow:hidden;display:block;
+  }
+  .upload-box:hover{border-color:var(--marigold);background:#fffaf0;}
+  .upload-box input{position:absolute;inset:0;opacity:0;cursor:pointer;}
+  .upload-box .ic{font-size:26px;display:block;margin-bottom:8px;}
+  .upload-box .t1{font-weight:700;font-size:14px;}
+  .upload-box .t2{font-size:12px;color:#9a8a7a;margin-top:2px;}
+  .preview-wrap{display:flex;justify-content:center;margin-top:14px;}
+  .preview-wrap img{width:112px;height:112px;object-fit:cover;border-radius:50%;border:3px solid var(--gold-soft);}
+
+  .templates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .tpl{border-radius:14px;padding:4px;border:2px solid transparent;cursor:pointer;text-align:center;transition:all .2s;}
+  .tpl.sel{border-color:var(--thread-red);}
+  .tpl-swatch{height:88px;border-radius:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+  .tpl-swatch .dot{width:24px;height:24px;border-radius:50%;border:2px solid rgba(255,255,255,.6);}
+  .tpl-name{font-family:'Space Mono',monospace;font-size:10px;margin-top:6px;color:#7a6a5c;}
+  .tpl.sel .tpl-name{color:var(--thread-red);font-weight:700;}
+
+  .pay-box{background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));border-radius:16px;padding:26px;text-align:center;color:#fff;}
+  .price{font-family:'Fraunces',serif;font-size:42px;font-weight:600;}
+  .price sup{font-size:18px;top:-16px;}
+  .pay-box p{font-size:12.5px;opacity:.8;margin:4px 0 18px;}
+
+  .btn-row{display:flex;gap:10px;margin-top:22px;}
+  .error{color:var(--thread-red);font-size:12.5px;margin-top:-8px;margin-bottom:14px;display:none;}
+
+  .card-preview{display:flex;justify-content:center;margin-bottom:20px;}
+  .card-preview canvas{width:100%;max-width:320px;border-radius:14px;box-shadow:0 20px 40px -18px rgba(92,17,41,.4);}
+  .result-actions{display:flex;flex-direction:column;gap:10px;}
+  .disclaimer{font-size:11px;color:#9a8a7a;text-align:center;margin-top:16px;line-height:1.5;}
+  .spinner{
+    width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.4);
+    border-top-color:#fff;animation:spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="index.html"><span class="thread-dot"></span>Rakhi Memory</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="app.html" class="nav-cta active">Create yours</a>
+  </div>
+</nav>
+
+<main>
+  <header class="app-head">
+    <span class="eyebrow">Raksha Bandhan · ₹10</span>
+    <h1>Create Your <em>Rakhi Memory</em></h1>
+    <p class="sub">Tie a thread across the distance in under a minute.</p>
+    <p class="sub" id="statsLine" style="margin-top:8px;font-weight:700;color:var(--thread-red);"></p>
+  </header>
+
+  <div class="stepper">
+    <div class="thread-track"><div class="thread-fill" id="threadFill"></div></div>
+    <div class="knots" id="knots"></div>
+    <div class="step-labels" id="stepLabels"></div>
+  </div>
+
+  <!-- STEP 1: Names -->
+  <div class="panel" id="panel-1">
+    <h2>Who's this thread for?</h2>
+    <p class="hint">Enter both names — this becomes the message on your card.</p>
+    <div class="field">
+      <label class="field-label">Your name</label>
+      <input type="text" id="senderName" placeholder="e.g. Priya" maxlength="24">
+    </div>
+    <div class="field">
+      <label class="field-label">Sibling's name</label>
+      <input type="text" id="siblingName" placeholder="e.g. Rohan" maxlength="24">
+    </div>
+    <div class="field">
+      <label class="field-label">They are my</label>
+      <div class="relation-toggle">
+        <button type="button" data-rel="Brother" class="sel">Brother</button>
+        <button type="button" data-rel="Sister">Sister</button>
+      </div>
+    </div>
+    <div class="field">
+      <label class="field-label">Your WhatsApp number (optional)</label>
+      <input type="text" id="phoneNumber" placeholder="e.g. 98765 43210" maxlength="15">
+    </div>
+    <div class="field contest-field">
+      <label class="contest-check">
+        <input type="checkbox" id="contestOptIn">
+        <span>🎁 Enter this Rakhi in <strong>Brother/Sister of the Year</strong> — win a surprise gift, same-day delivery</span>
+      </label>
+      <textarea id="contestStory" class="story-box" placeholder="In a line — why does this bond deserve to win?" style="display:none;" maxlength="220"></textarea>
+    </div>
+    <div class="error" id="err-1">Please fill in both names to continue.</div>
+    <div class="btn-row"><button class="btn btn-primary btn-block" onclick="gotoStep(2)">Continue</button></div>
+  </div>
+
+  <!-- STEP 2: Photo -->
+  <div class="panel" id="panel-2" style="display:none;">
+    <h2>Add a memory</h2>
+    <p class="hint">Upload a photo of the two of you — it'll be framed on your card.</p>
+    <label class="upload-box" id="uploadBox">
+      <input type="file" id="photoInput" accept="image/*">
+      <span class="ic">📷</span>
+      <span class="t1">Tap to upload a photo</span>
+      <span class="t2">JPG or PNG, up to 8MB</span>
+    </label>
+    <div class="preview-wrap" id="previewWrap" style="display:none;"><img id="previewImg" alt="Preview"></div>
+    <div class="error" id="err-2">Please upload a photo to continue.</div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="gotoStep(1)">← Back</button>
+      <button class="btn btn-primary" style="flex:1" onclick="gotoStep(3)">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Design -->
+  <div class="panel" id="panel-3" style="display:none;">
+    <h2>Choose a design</h2>
+    <p class="hint">Each design changes the colours and frame of your card.</p>
+    <div class="templates" id="templates"></div>
+    <div class="error" id="err-3">Please select a design to continue.</div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="gotoStep(2)">← Back</button>
+      <button class="btn btn-primary" style="flex:1" onclick="gotoStep(4)">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: Pay -->
+  <div class="panel" id="panel-4" style="display:none;">
+    <h2>Unlock your card</h2>
+    <p class="hint">A small ₹10 fee unlocks your high-resolution card and download.</p>
+    <div class="pay-box">
+      <div class="price">₹10<sup>.00</sup></div>
+      <p>One-time · Rakhi Memory Card</p>
+      <button class="btn btn-gold btn-block" id="payBtn" onclick="startPayment()">Pay ₹10 securely</button>
+    </div>
+    <div class="error" id="err-4"></div>
+    <p class="disclaimer">Payments are processed by Razorpay and support UPI (PhonePe/GPay/Paytm), cards, and net banking. Your card only unlocks after the payment is verified by our server.</p>
+    <div class="btn-row"><button class="btn btn-back" onclick="gotoStep(3)">← Back</button></div>
+  </div>
+
+  <!-- STEP 5: Result -->
+  <div class="panel" id="panel-5" style="display:none;">
+    <h2>Your Rakhi Memory is ready 🎉</h2>
+    <p class="hint">Download it or share it straight to WhatsApp.</p>
+    <div class="card-preview"><canvas id="cardCanvas" width="1080" height="1350"></canvas></div>
+    <div class="result-actions">
+      <button class="btn btn-wa btn-block" onclick="shareWhatsApp()">Share on WhatsApp</button>
+      <button class="btn btn-outline btn-block" onclick="downloadCard()">Download image</button>
+    </div>
+    <div id="entryNotice" class="wa-note" style="display:none;"></div>
+    <div class="btn-row"><button class="btn btn-back" onclick="gotoStep(3)">← Change design</button></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Made with 🧵 for Raksha Bandhan · <a href="index.html">Home</a> · <a href="about.html">About</a></p>
+</footer>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/cardRenderer.js"></script>
+<script src="js/wizard.js"></script>
+</body>
+</html>
