@@ -578,6 +578,25 @@
   }
   @keyframes trailFade{ to{ transform:scale(0.2); opacity:0; } }
 
+  /* state: greet — wave hello */
+  .bot-greet .bot-arm.arm-r{ animation:armWave 0.5s ease-in-out 3; }
+  .bot-greet .bot-eye{ height:6px; border-radius:3px 3px 7px 7px; }
+  .bot-greet .bot-mouth{ width:14px; height:6px; background:transparent; border-bottom:2px solid var(--cyan); border-radius:0 0 9px 9px; }
+
+  /* speech bubble */
+  .bot-bubble{
+    position:fixed; top:0; left:0; z-index:75; pointer-events:none;
+    max-width:190px; padding:9px 13px; border-radius:14px 14px 14px 4px;
+    background:rgba(16,10,44,0.92); border:1px solid rgba(101,255,207,0.4);
+    backdrop-filter:blur(10px); box-shadow:0 10px 28px rgba(20,10,60,0.45);
+    font-family:'Space Grotesk', sans-serif; font-size:0.8rem; line-height:1.35; color:var(--cream);
+    opacity:0; transform:translate3d(-999px,-999px,0) scale(0.82); transform-origin:bottom left;
+    transition:opacity .22s ease, transform .22s ease;
+  }
+  .bot-bubble.show{ opacity:1; transform:translate3d(var(--bx,0),var(--by,0),0) scale(1); }
+  @media (max-width:640px){ .bot-bubble{ display:none; } }
+  @media (prefers-reduced-motion: reduce){ .bot-bubble{ display:none; } }
+
   @media (max-width:640px){ .ssc-bot{ display:none; } }
   @media (prefers-reduced-motion: reduce){ .ssc-bot{ display:none; } }
 
@@ -855,6 +874,8 @@
   </div>
 </div>
 
+<div class="bot-bubble" id="botBubble" aria-live="polite"><span id="botBubbleText"></span></div>
+
 <section class="services" id="services">
   <div class="section-label">01 — WHAT WE BUILD</div>
   <h2 class="section-title">From a rough idea to a live website.</h2>
@@ -960,16 +981,97 @@
     revealEls.forEach(el=>el.classList.add('in-view'));
   }
 
-  /* ---- SSC-BOT: living mascot ---- */
+  /* ---- SSC-BOT: living mascot with voice ---- */
   (function(){
     const bot = document.getElementById('sscBot');
+    const bubble = document.getElementById('botBubble');
+    const bubbleText = document.getElementById('botBubbleText');
     if(!bot || reduceMotion || window.innerWidth < 640) return;
 
-    let pos = { x: window.innerWidth * 0.82, y: window.innerHeight * 0.28 };
+    const edge = ['left','right','top'][Math.floor(Math.random() * 3)];
+    let pos = { x: -80, y: window.innerHeight * 0.3 };
+    if(edge === 'right'){ pos = { x: window.innerWidth + 80, y: window.innerHeight * 0.3 }; }
+    if(edge === 'top'){ pos = { x: window.innerWidth * 0.5, y: -80 }; }
+
     let idleTarget = pickIdleTarget();
     let mouse = null;
     let lastActivity = Date.now();
-    let curiousTimer = null, scrollTimer = null, celebrateTimer = null;
+    let curiousTimer = null, scrollTimer = null, celebrateTimer = null, bubbleHideTimer = null;
+    let inactiveNoticeGiven = false;
+    const lastSaid = {};
+    let voicesReady = false, chosenVoice = null;
+    let pendingGreeting = true;
+
+    /* ---------- voice ---------- */
+    function loadVoice(){
+      if(!('speechSynthesis' in window)) return;
+      const voices = window.speechSynthesis.getVoices();
+      if(!voices.length) return;
+      chosenVoice = voices.find(v => /female|girl|child|samantha|victoria|zira|karen/i.test(v.name))
+        || voices.find(v => v.lang && v.lang.startsWith('en'))
+        || voices[0];
+      voicesReady = true;
+    }
+    if('speechSynthesis' in window){
+      loadVoice();
+      window.speechSynthesis.onvoiceschanged = loadVoice;
+    }
+    function speak(text){
+      if(!('speechSynthesis' in window)) return;
+      try{
+        const clean = text.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2190}-\u{21FF}]/gu, '').trim();
+        if(!clean) return;
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(clean);
+        u.pitch = 1.75;
+        u.rate = 1.05;
+        u.volume = 0.85;
+        if(chosenVoice) u.voice = chosenVoice;
+        window.speechSynthesis.speak(u);
+      }catch(err){ /* speech synthesis unavailable — bubble text still shows */ }
+    }
+
+    /* ---------- speech bubble ---------- */
+    function showBubble(text, duration){
+      bubbleText.textContent = text;
+      bubble.classList.add('show');
+      clearTimeout(bubbleHideTimer);
+      bubbleHideTimer = setTimeout(()=> bubble.classList.remove('show'), duration || (1800 + text.length * 35));
+    }
+    function positionBubble(){
+      bubble.style.setProperty('--bx', (pos.x - 30) + 'px');
+      bubble.style.setProperty('--by', (pos.y - 58) + 'px');
+    }
+
+    function say(text, opts){
+      opts = opts || {};
+      showBubble(text, opts.duration);
+      if(opts.speak !== false) speak(text);
+    }
+
+    function trySay(key, text, minGapMs, opts){
+      const now = Date.now();
+      if(lastSaid[key] && now - lastSaid[key] < minGapMs) return;
+      lastSaid[key] = now;
+      say(text, opts);
+    }
+
+    /* ---------- greeting on arrival ---------- */
+    function greet(){
+      setState('happy');
+      bot.classList.add('bot-greet');
+      say('Hiiii! 👋 Hehe… may I help you? ✨', { duration: 3200 });
+      setTimeout(()=>{ bot.classList.remove('bot-greet'); setState('idle'); }, 1500);
+    }
+    // speech synthesis needs a user gesture in most browsers — try immediately,
+    // and fall back to the visitor's first interaction if it was blocked.
+    setTimeout(()=>{ if(pendingGreeting){ pendingGreeting = false; greet(); } }, 1400);
+    ['pointerdown','keydown'].forEach(evt=>{
+      window.addEventListener(evt, ()=>{
+        if(pendingGreeting){ pendingGreeting = false; greet(); }
+        if('speechSynthesis' in window) window.speechSynthesis.resume();
+      }, { once:true, passive:true });
+    });
 
     function pickIdleTarget(){
       const m = 90;
@@ -987,6 +1089,7 @@
     window.addEventListener('mousemove', (e)=>{
       mouse = { x: e.clientX, y: e.clientY };
       lastActivity = Date.now();
+      inactiveNoticeGiven = false;
       if(bot.dataset.state !== 'excited' && bot.dataset.state !== 'celebrate'){
         setState('curious');
         clearTimeout(curiousTimer);
@@ -996,6 +1099,7 @@
 
     window.addEventListener('scroll', ()=>{
       lastActivity = Date.now();
+      inactiveNoticeGiven = false;
       if(bot.dataset.state !== 'excited' && bot.dataset.state !== 'celebrate'){
         setState('happy');
         clearTimeout(scrollTimer);
@@ -1004,15 +1108,34 @@
     }, { passive:true });
 
     document.querySelectorAll('.service-card, .universe-card').forEach((el)=>{
-      el.addEventListener('mouseenter', ()=>{ lastActivity = Date.now(); setState('excited'); });
+      el.addEventListener('mouseenter', ()=>{
+        lastActivity = Date.now();
+        inactiveNoticeGiven = false;
+        setState('excited');
+        trySay('hover', 'Ooooh! You found something! Hehe! 😄', 9000);
+      });
       el.addEventListener('mouseleave', ()=>{ setState('idle'); });
     });
 
-    document.querySelectorAll('.btn-primary, .contact-btn, .nav-cta, .wa-float').forEach((el)=>{
+    // "Start Project" style calls to action
+    document.querySelectorAll('.btn-primary, .contact-btn').forEach((el)=>{
       el.addEventListener('click', ()=>{
         lastActivity = Date.now();
         setState('celebrate');
         burstConfetti();
+        say('Yayyy! Let\u2019s build something amazing! 🚀', { duration: 2600 });
+        clearTimeout(celebrateTimer);
+        celebrateTimer = setTimeout(()=>{ setState('idle'); }, 1600);
+      });
+    });
+
+    // opening a chat / WhatsApp conversation
+    document.querySelectorAll('.nav-cta, .wa-float').forEach((el)=>{
+      el.addEventListener('click', ()=>{
+        lastActivity = Date.now();
+        setState('celebrate');
+        burstConfetti();
+        say('Hehe! I\u2019m ready! What are we building? 🤖✨', { duration: 2600 });
         clearTimeout(celebrateTimer);
         celebrateTimer = setTimeout(()=>{ setState('idle'); }, 1600);
       });
@@ -1065,6 +1188,10 @@
 
       if(idleFor > 6500 && bot.dataset.state !== 'celebrate' && bot.dataset.state !== 'excited'){
         setState('sleepy');
+        if(idleFor > 9000 && !inactiveNoticeGiven){
+          inactiveNoticeGiven = true;
+          trySay('inactive', 'Pssst… are you still there? 👀', 20000);
+        }
       } else if(idleFor <= 6500 && bot.dataset.state === 'sleepy'){
         setState('idle');
       }
@@ -1088,6 +1215,7 @@
       const tilt = Math.max(-16, Math.min(16, dx * 0.04));
       bot.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) rotate(${tilt}deg)`;
       bot.style.setProperty('--lookx', Math.max(-2, Math.min(2, dx * 0.01)) + 'px');
+      positionBubble();
 
       const moveSpeed = Math.hypot(pos.x - prevX, pos.y - prevY);
       if(moveSpeed > 1.4 && bot.dataset.state !== 'sleepy' && now - lastTrailSpawn > 55){
