@@ -3,358 +3,1590 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global SSC — Build Your Dreams Into a Website</title>
-<meta name="description" content="Global SSC designs and builds websites that turn your ideas into reality. Chat with us on WhatsApp to get started.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#0E1A2B;
-    --navy-2:#132743;
-    --cream:#F4EFE3;
-    --ink:#0E1A2B;
-    --teal:#5FC7BE;
-    --amber:#E8963C;
-    --wa-green:#25D366;
-    --line: rgba(244,239,227,0.14);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--navy);
-    color:var(--cream);
-    font-family:'Inter', sans-serif;
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.02em;}
-  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em; }
-  a{ color:inherit; text-decoration:none; }
 
-  /* Blueprint grid background */
-  .blueprint-bg{
-    position:absolute; inset:0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events:none;
+<title>Global SSC — Build Your Dreams Into a Website</title>
+
+<meta name="description" content="Global SSC designs and builds futuristic websites for businesses, brands and ideas. Chat with us on WhatsApp to get started.">
+<meta name="theme-color" content="#050812">
+
+<meta property="og:title" content="Global SSC — Build Your Dreams Into a Website">
+<meta property="og:description" content="Design. Development. Digital experiences. Built for the future.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://globalssc.in">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050812;
+  --bg2:#080d1b;
+  --panel:rgba(13,21,40,.62);
+  --panel2:rgba(18,29,54,.72);
+
+  --text:#eef7ff;
+  --muted:#93a4bd;
+
+  --cyan:#5ff6ff;
+  --cyan2:#19d9ff;
+  --violet:#9b7cff;
+  --pink:#ff5fd7;
+  --green:#25d366;
+
+  --line:rgba(95,246,255,.13);
+  --line2:rgba(255,255,255,.08);
+
+  --shadow:
+    0 0 80px rgba(25,217,255,.08),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(95,246,255,.10),transparent 28%),
+    radial-gradient(circle at 85% 25%,rgba(155,124,255,.12),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  opacity:.035;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(255,255,255,.15) 4px
+    );
+}
+
+h1,h2,h3{
+  font-family:'Space Grotesk',sans-serif;
+  letter-spacing:-.04em;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.mono{
+  font-family:'IBM Plex Mono',monospace;
+}
+
+/* =========================
+   AMBIENT BACKGROUND
+========================= */
+
+.ambient{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:-3;
+}
+
+.orb{
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.13;
+  animation:floatOrb 14s ease-in-out infinite alternate;
+}
+
+.orb.one{
+  background:var(--cyan);
+  top:-180px;
+  left:-100px;
+}
+
+.orb.two{
+  background:var(--violet);
+  right:-150px;
+  top:30%;
+  animation-delay:-5s;
+}
+
+.orb.three{
+  background:var(--pink);
+  left:35%;
+  bottom:-300px;
+  animation-delay:-9s;
+}
+
+@keyframes floatOrb{
+  from{transform:translate3d(0,0,0) scale(1)}
+  to{transform:translate3d(40px,-30px,0) scale(1.15)}
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:fixed;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1180px,calc(100% - 28px));
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:12px 14px;
+
+  background:rgba(5,8,18,.72);
+  backdrop-filter:blur(22px) saturate(150%);
+  -webkit-backdrop-filter:blur(22px) saturate(150%);
+
+  border:1px solid var(--line2);
+  border-radius:18px;
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  letter-spacing:.05em;
+  font-size:.95rem;
+}
+
+.logo-mark{
+  width:38px;
+  height:38px;
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(95,246,255,.7);
+  color:var(--cyan);
+
+  background:
+    linear-gradient(135deg,rgba(95,246,255,.12),rgba(155,124,255,.08));
+
+  transform:rotate(45deg);
+
+  box-shadow:
+    0 0 20px rgba(95,246,255,.12),
+    inset 0 0 18px rgba(95,246,255,.06);
+}
+
+.logo-mark::after{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(155,124,255,.35);
+}
+
+.logo-mark span{
+  transform:rotate(-45deg);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.58rem;
+  position:relative;
+  z-index:2;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+nav{
+  display:flex;
+  gap:26px;
+}
+
+nav a{
+  color:#aebdd0;
+  font-size:.85rem;
+  transition:.25s ease;
+}
+
+nav a:hover{
+  color:var(--cyan);
+  text-shadow:0 0 14px rgba(95,246,255,.5);
+}
+
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  padding:10px 16px;
+
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#25d366,#61f7a0);
+  color:#031009;
+
+  font-weight:700;
+  font-size:.82rem;
+
+  box-shadow:0 0 25px rgba(37,211,102,.16);
+  transition:.25s ease;
+}
+
+.nav-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 35px rgba(37,211,102,.3);
+}
+
+.menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+
+  border:1px solid var(--line2);
+  background:rgba(255,255,255,.04);
+  color:white;
+  border-radius:11px;
+  cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+
+  padding:
+    150px 6vw
+    100px;
+}
+
+.hero-grid{
+  position:absolute;
+  inset:0;
+  opacity:.45;
+
+  background-image:
+    linear-gradient(rgba(95,246,255,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(95,246,255,.07) 1px,transparent 1px);
+
+  background-size:56px 56px;
+
+  mask-image:linear-gradient(
+    to bottom,
+    black 0%,
+    black 65%,
+    transparent 100%
+  );
+
+  animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+  from{background-position:0 0}
+  to{background-position:56px 56px}
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  border:1px solid rgba(95,246,255,.08);
+  border-radius:50%;
+  right:-260px;
+  top:50%;
+  transform:translateY(-50%);
+  box-shadow:
+    0 0 0 80px rgba(95,246,255,.015),
+    0 0 0 160px rgba(95,246,255,.012);
+}
+
+.hero-inner{
+  width:min(900px,100%);
+  position:relative;
+  z-index:5;
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:7px 13px;
+  margin-bottom:28px;
+
+  border:1px solid rgba(95,246,255,.2);
+  border-radius:999px;
+
+  background:rgba(95,246,255,.035);
+
+  color:var(--cyan);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.06em;
+
+  box-shadow:
+    0 0 25px rgba(95,246,255,.05),
+    inset 0 0 15px rgba(95,246,255,.025);
+}
+
+.status-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 14px var(--cyan);
+  animation:blink 1.8s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:.25}
+}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,7rem);
+  line-height:.91;
+  max-width:900px;
+}
+
+.hero h1 span{
+  display:block;
+}
+
+.gradient-text{
+  background:
+    linear-gradient(
+      100deg,
+      var(--cyan),
+      #b4fbff 35%,
+      var(--violet) 75%,
+      var(--pink)
+    );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  background-size:200% auto;
+  animation:gradientFlow 6s linear infinite;
+}
+
+@keyframes gradientFlow{
+  to{background-position:200% center}
+}
+
+.hero p{
+  max-width:610px;
+  margin-top:30px;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:38px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  min-height:53px;
+  padding:0 22px;
+
+  border-radius:13px;
+
+  font-size:.9rem;
+  font-weight:700;
+
+  transition:.25s ease;
+}
+
+.btn-primary{
+  color:#031009;
+  background:linear-gradient(135deg,#25d366,#7effad);
+  box-shadow:
+    0 0 30px rgba(37,211,102,.16),
+    inset 0 1px 0 rgba(255,255,255,.5);
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 12px 35px rgba(37,211,102,.2),
+    0 0 45px rgba(37,211,102,.14);
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.035);
+  color:#dce9f7;
+  backdrop-filter:blur(12px);
+}
+
+.btn-secondary:hover{
+  border-color:rgba(95,246,255,.5);
+  color:var(--cyan);
+  transform:translateY(-3px);
+}
+
+.hero-data{
+  position:absolute;
+  right:7vw;
+  top:50%;
+  transform:translateY(-50%);
+  width:340px;
+  height:340px;
+  z-index:2;
+}
+
+.holo-ring{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  border:1px solid rgba(95,246,255,.24);
+  box-shadow:
+    0 0 45px rgba(95,246,255,.08),
+    inset 0 0 45px rgba(95,246,255,.05);
+  animation:spin 18s linear infinite;
+}
+
+.holo-ring:nth-child(2){
+  inset:32px;
+  border-color:rgba(155,124,255,.3);
+  animation-direction:reverse;
+  animation-duration:13s;
+}
+
+.holo-ring:nth-child(3){
+  inset:75px;
+  border-style:dashed;
+  border-color:rgba(255,95,215,.28);
+  animation-duration:9s;
+}
+
+.holo-core{
+  position:absolute;
+  inset:112px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(circle at 35% 30%,#d7ffff 0 2%,transparent 3%),
+    radial-gradient(circle,#19d9ff 0%,#087da1 24%,#091326 70%);
+
+  box-shadow:
+    0 0 45px rgba(25,217,255,.45),
+    0 0 100px rgba(25,217,255,.18);
+
+  animation:corePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+@keyframes corePulse{
+  to{
+    transform:scale(1.08);
+    box-shadow:
+      0 0 65px rgba(25,217,255,.5),
+      0 0 120px rgba(25,217,255,.2);
   }
-  .crosshair{
-    position:absolute; width:22px; height:22px; opacity:0.55;
+}
+
+.holo-label{
+  position:absolute;
+  left:50%;
+  bottom:-45px;
+  transform:translateX(-50%);
+
+  padding:7px 11px;
+
+  border:1px solid var(--line);
+  background:rgba(5,8,18,.7);
+  backdrop-filter:blur(12px);
+
+  color:var(--cyan);
+  white-space:nowrap;
+
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.62rem;
+}
+
+.corner{
+  position:absolute;
+  width:25px;
+  height:25px;
+  border-color:var(--cyan);
+  opacity:.65;
+}
+
+.corner.tl{
+  top:18%;
+  left:6%;
+  border-top:1px solid;
+  border-left:1px solid;
+}
+
+.corner.br{
+  right:7%;
+  bottom:14%;
+  border-right:1px solid;
+  border-bottom:1px solid;
+}
+
+.coordinates{
+  position:absolute;
+  bottom:30px;
+  left:6vw;
+
+  color:#4d6079;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.62rem;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  position:relative;
+  padding:120px 6vw;
+}
+
+.section-wrap{
+  width:min(1180px,100%);
+  margin:auto;
+}
+
+.section-label{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  color:var(--cyan);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.08em;
+}
+
+.section-label::after{
+  content:"";
+  width:100px;
+  height:1px;
+  background:linear-gradient(90deg,var(--cyan),transparent);
+}
+
+.section-title{
+  margin-top:20px;
+  max-width:750px;
+  font-size:clamp(2rem,4.5vw,4rem);
+  line-height:1;
+}
+
+.section-sub{
+  max-width:620px;
+  margin-top:20px;
+  color:var(--muted);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+
+  background:
+    radial-gradient(circle at 80% 30%,rgba(155,124,255,.06),transparent 35%),
+    var(--bg2);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+
+  margin-top:55px;
+}
+
+.service-card{
+  position:relative;
+  overflow:hidden;
+
+  padding:31px;
+
+  min-height:235px;
+
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.045),
+      rgba(255,255,255,.015)
+    );
+
+  box-shadow:var(--shadow);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.service-card::before{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-80px;
+  top:-80px;
+  border-radius:50%;
+  background:var(--cyan);
+  filter:blur(60px);
+  opacity:.06;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(95,246,255,.3);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.25),
+    0 0 35px rgba(95,246,255,.05);
+}
+
+.service-num{
+  color:var(--cyan);
+  font-size:.67rem;
+}
+
+.service-card h3{
+  margin-top:30px;
+  font-size:1.35rem;
+}
+
+.service-card p{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-list{
+  margin-top:55px;
+  border-top:1px solid var(--line);
+}
+
+.process-item{
+  display:grid;
+  grid-template-columns:100px 1fr auto;
+  align-items:center;
+  gap:30px;
+
+  padding:32px 0;
+
+  border-bottom:1px solid var(--line);
+
+  transition:.25s ease;
+}
+
+.process-item:hover{
+  padding-left:12px;
+  background:linear-gradient(
+    90deg,
+    rgba(95,246,255,.035),
+    transparent
+  );
+}
+
+.process-num{
+  color:var(--cyan);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.8rem;
+}
+
+.process-item h3{
+  font-size:1.25rem;
+}
+
+.process-item p{
+  color:var(--muted);
+  font-size:.9rem;
+  max-width:580px;
+  margin-top:5px;
+}
+
+.process-arrow{
+  color:#40516b;
+  font-size:1.3rem;
+}
+
+/* =========================
+   FUTURE SIGNAL
+========================= */
+
+.future-panel{
+  margin-top:90px;
+
+  padding:28px;
+
+  border:1px solid rgba(95,246,255,.14);
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(95,246,255,.06),
+      rgba(155,124,255,.04)
+    );
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.future-stat{
+  padding:20px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  background:rgba(0,0,0,.13);
+}
+
+.future-stat strong{
+  display:block;
+  color:var(--cyan);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.5rem;
+}
+
+.future-stat span{
+  display:block;
+  color:#71839d;
+  margin-top:5px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.62rem;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(95,246,255,.18),transparent 45%),
+    linear-gradient(135deg,#08101f,#050812);
+}
+
+.contact::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+
+  border:1px solid rgba(95,246,255,.1);
+  border-radius:28px;
+
+  pointer-events:none;
+}
+
+.contact-inner{
+  position:relative;
+  z-index:2;
+
+  width:min(800px,100%);
+  margin:auto;
+
+  text-align:center;
+}
+
+.contact-kicker{
+  color:var(--cyan);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.68rem;
+}
+
+.contact h2{
+  margin-top:20px;
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:.95;
+}
+
+.contact p{
+  max-width:580px;
+  margin:22px auto 35px;
+  color:var(--muted);
+}
+
+.contact-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  min-height:62px;
+  padding:0 28px;
+
+  border-radius:15px;
+
+  background:linear-gradient(135deg,#25d366,#72ffae);
+  color:#031009;
+
+  font-weight:800;
+
+  box-shadow:
+    0 0 35px rgba(37,211,102,.17),
+    inset 0 1px 0 rgba(255,255,255,.5);
+
+  transition:.25s ease;
+}
+
+.contact-btn:hover{
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:
+    0 15px 45px rgba(37,211,102,.18),
+    0 0 60px rgba(37,211,102,.1);
+}
+
+.contact-note{
+  margin-top:18px !important;
+  color:#52657f !important;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.62rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  width:min(1180px,100%);
+  margin:auto;
+
+  padding:35px 6vw;
+
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+
+  color:#53647d;
+  font-size:.76rem;
+
+  border-top:1px solid var(--line);
+}
+
+footer .mono{
+  color:#3f526d;
+}
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+
+.wa-float{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  z-index:900;
+
+  width:62px;
+  height:62px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#25d366;
+
+  box-shadow:
+    0 10px 35px rgba(37,211,102,.25),
+    0 0 0 0 rgba(37,211,102,.3);
+
+  animation:waPulse 2.8s infinite;
+
+  transition:.25s ease;
+}
+
+.wa-float:hover{
+  transform:scale(1.08);
+}
+
+.wa-float svg{
+  width:30px;
+  height:30px;
+}
+
+@keyframes waPulse{
+  0%{
+    box-shadow:
+      0 10px 35px rgba(37,211,102,.25),
+      0 0 0 0 rgba(37,211,102,.35);
   }
-  .crosshair::before, .crosshair::after{
-    content:''; position:absolute; background:var(--teal);
+
+  70%{
+    box-shadow:
+      0 10px 35px rgba(37,211,102,.25),
+      0 0 0 16px rgba(37,211,102,0);
   }
-  .crosshair::before{ top:50%; left:0; width:100%; height:1px; transform:translateY(-50%);}
-  .crosshair::after{ left:50%; top:0; height:100%; width:1px; transform:translateX(-50%);}
+
+  100%{
+    box-shadow:
+      0 10px 35px rgba(37,211,102,.25),
+      0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+  display:none;
+
+  position:fixed;
+  top:78px;
+  left:14px;
+  right:14px;
+  z-index:999;
+
+  padding:15px;
+
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+
+  background:rgba(5,8,18,.94);
+  backdrop-filter:blur(25px);
+
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.mobile-menu.open{
+  display:block;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px;
+  color:#aebdd0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.mobile-menu a:hover{
+  color:var(--cyan);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .hero-data{
+    opacity:.3;
+    right:-130px;
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .future-panel{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:800px){
 
   header{
-    position:sticky; top:0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 6vw;
-    background:rgba(14,26,43,0.85);
-    backdrop-filter: blur(8px);
-    border-bottom:1px solid var(--line);
+    top:9px;
   }
-  .logo{ display:flex; align-items:center; gap:10px; font-size:1.15rem; font-weight:700;}
-  .logo-mark{
-    width:34px; height:34px; border:1.5px solid var(--teal);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--teal);
-    transform:rotate(45deg);
-  }
-  .logo-mark span{ transform:rotate(-45deg); }
-  nav{ display:flex; gap:32px; font-size:0.92rem; }
-  nav a{ opacity:0.85; transition:opacity .2s; }
-  nav a:hover{ opacity:1; color:var(--teal); }
+
+  nav,
   .nav-cta{
-    display:flex; align-items:center; gap:8px;
-    background:var(--wa-green); color:#0E1A2B; font-weight:600;
-    padding:10px 18px; border-radius:100px; font-size:0.88rem;
+    display:none;
   }
-  .nav-links{ display:flex; align-items:center; gap:32px; }
-  @media (max-width:800px){ nav{display:none;} }
 
-  /* HERO */
+  .menu-btn{
+    display:block;
+  }
+
   .hero{
-    position:relative; min-height:92vh;
-    display:flex; flex-direction:column; justify-content:center;
-    padding: 0 6vw; overflow:hidden;
+    padding-top:145px;
+    min-height:900px;
   }
-  .hero-inner{ position:relative; z-index:2; max-width:900px; padding-top:40px; padding-bottom:40px;}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:10px;
-    font-size:0.78rem; color:var(--teal); margin-bottom:28px;
-    border:1px solid var(--line); padding:6px 14px; border-radius:100px;
-  }
-  .eyebrow::before{ content:'●'; font-size:0.5rem; color:var(--amber); }
+
   .hero h1{
-    font-size:clamp(2.4rem, 6vw, 5rem);
-    line-height:1.02;
-    max-width:14ch;
-  }
-  .hero h1 em{
-    font-style:normal; color:var(--teal);
-  }
-  .hero p{
-    max-width:520px; margin-top:26px; font-size:1.08rem; color:rgba(244,239,227,0.78);
-  }
-  .hero-ctas{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
-  .btn-primary{
-    background:var(--wa-green); color:#0E1A2B; font-weight:600;
-    padding:16px 28px; border-radius:6px; display:inline-flex; align-items:center; gap:10px;
-    font-size:0.98rem; transition:transform .2s ease, box-shadow .2s ease;
-    box-shadow:0 0 0 0 rgba(37,211,102,0.4);
-  }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,211,102,0.25);}
-  .btn-secondary{
-    border:1px solid var(--line); color:var(--cream);
-    padding:16px 28px; border-radius:6px; font-size:0.98rem;
-    transition:border-color .2s ease;
-  }
-  .btn-secondary:hover{ border-color:var(--teal); color:var(--teal); }
-
-  .hero-tag{
-    position:absolute; right:6vw; top:50%; transform:translateY(-50%) rotate(6deg);
-    border:1.5px dashed var(--amber); color:var(--amber);
-    font-family:'IBM Plex Mono', monospace; font-size:0.75rem;
-    padding:14px 18px; text-align:center; opacity:0.85;
-  }
-  @media (max-width:900px){ .hero-tag{ display:none; } }
-
-  .coords{
-    position:absolute; font-family:'IBM Plex Mono', monospace; font-size:0.68rem;
-    color:rgba(244,239,227,0.35);
+    font-size:clamp(3rem,14vw,5.2rem);
   }
 
-  /* SECTIONS */
-  section{ position:relative; padding:110px 6vw; }
-  .section-label{
-    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--amber);
-    display:flex; align-items:center; gap:14px; margin-bottom:20px;
+  .hero-data{
+    width:280px;
+    height:280px;
+    right:-95px;
+    top:72%;
+    opacity:.28;
   }
-  .section-label::after{ content:''; height:1px; flex:1; background:var(--line); }
-  .section-title{ font-size:clamp(1.8rem,3.4vw,2.6rem); max-width:16ch; margin-bottom:18px; }
-  .section-sub{ color:rgba(244,239,227,0.7); max-width:560px; font-size:1.02rem; }
 
-  /* SERVICES */
-  .services{ background:var(--navy-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .service-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--line); margin-top:56px; border:1px solid var(--line);
+    grid-template-columns:1fr;
   }
-  .service-card{
-    background:var(--navy-2); padding:36px 30px; position:relative;
-  }
-  .service-num{ font-family:'IBM Plex Mono', monospace; color:var(--teal); font-size:0.8rem; margin-bottom:22px; display:block; }
-  .service-card h3{ font-size:1.25rem; margin-bottom:12px; }
-  .service-card p{ color:rgba(244,239,227,0.68); font-size:0.95rem; }
-  @media (max-width:800px){ .service-grid{ grid-template-columns:1fr; } }
 
-  /* PROCESS */
-  .process-list{ margin-top:56px; }
   .process-item{
-    display:grid; grid-template-columns:80px 1fr; gap:28px;
-    padding:28px 0; border-top:1px solid var(--line);
+    grid-template-columns:55px 1fr;
+    gap:15px;
   }
-  .process-item:last-child{ border-bottom:1px solid var(--line); }
-  .process-num{ font-family:'IBM Plex Mono', monospace; color:var(--amber); font-size:0.95rem; }
-  .process-item h3{ font-size:1.15rem; margin-bottom:6px; }
-  .process-item p{ color:rgba(244,239,227,0.68); font-size:0.95rem; max-width:520px; }
 
-  /* CONTACT */
-  .contact{
-    background:var(--teal); color:var(--navy);
-    border-radius:0; position:relative; overflow:hidden;
+  .process-arrow{
+    display:none;
   }
-  .contact .blueprint-bg{
-    background-image:
-      linear-gradient(rgba(14,26,43,0.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(14,26,43,0.12) 1px, transparent 1px);
+
+  section{
+    padding:90px 6vw;
   }
-  .contact-inner{ position:relative; z-index:2; text-align:center; max-width:640px; margin:0 auto; }
-  .contact h2{ font-size:clamp(2rem,4.4vw,3.2rem); margin-bottom:18px; color:var(--navy); }
-  .contact p{ color:rgba(14,26,43,0.75); font-size:1.05rem; margin-bottom:36px; }
+}
+
+@media(max-width:550px){
+
+  .logo{
+    font-size:.8rem;
+  }
+
+  .logo-mark{
+    width:34px;
+    height:34px;
+  }
+
+  .hero{
+    min-height:850px;
+  }
+
+  .hero p{
+    font-size:.95rem;
+  }
+
+  .hero-ctas{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .future-panel{
+    grid-template-columns:1fr;
+  }
+
+  .contact::before{
+    inset:10px;
+  }
+
   .contact-btn{
-    display:inline-flex; align-items:center; gap:12px;
-    background:var(--navy); color:var(--cream);
-    padding:18px 34px; border-radius:6px; font-weight:600; font-size:1.02rem;
-    transition:transform .2s ease;
+    width:100%;
+    justify-content:center;
   }
-  .contact-btn:hover{ transform:translateY(-2px); }
-  .contact-note{ margin-top:20px; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:rgba(14,26,43,0.65); }
 
   footer{
-    padding:36px 6vw; display:flex; justify-content:space-between; align-items:center;
-    border-top:1px solid var(--line); font-size:0.85rem; color:rgba(244,239,227,0.55);
-    flex-wrap:wrap; gap:12px;
+    padding:28px 6vw;
   }
 
-  /* Floating WhatsApp button */
   .wa-float{
-    position:fixed; bottom:26px; right:26px; z-index:100;
-    width:60px; height:60px; border-radius:50%;
-    background:var(--wa-green); display:flex; align-items:center; justify-content:center;
-    box-shadow:0 6px 20px rgba(37,211,102,0.45);
-    animation: pulse 2.4s infinite;
+    width:57px;
+    height:57px;
+    right:18px;
+    bottom:18px;
   }
-  .wa-float svg{ width:30px; height:30px; }
-  @keyframes pulse{
-    0%{ box-shadow:0 0 0 0 rgba(37,211,102,0.5); }
-    70%{ box-shadow:0 0 0 14px rgba(37,211,102,0); }
-    100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); }
-  }
+}
 
-  @media (prefers-reduced-motion: reduce){
-    .wa-float{ animation:none; }
-    html{ scroll-behavior:auto; }
-  }
+@media(prefers-reduced-motion:reduce){
 
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--teal); outline-offset:3px;
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+    scroll-behavior:auto !important;
+    transition:none !important;
   }
+}
 </style>
 </head>
+
 <body>
 
+<!-- AMBIENT FUTURE LIGHT -->
+<div class="ambient">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+</div>
+
+<!-- HEADER -->
 <header>
-  <div class="logo">
-    <div class="logo-mark"><span>SSC</span></div>
+
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <span>SSC</span>
+    </div>
     <span>GLOBAL SSC</span>
-  </div>
+  </a>
+
   <div class="nav-links">
+
     <nav>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website." target="_blank" rel="noopener">
+
+    <a
+      class="nav-cta"
+      href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website."
+      target="_blank"
+      rel="noopener"
+    >
       WhatsApp Us
     </a>
+
   </div>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+    ☰
+  </button>
+
 </header>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+
+  <a
+    href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website."
+    target="_blank"
+    rel="noopener"
+    onclick="closeMenu()"
+  >
+    WhatsApp Global SSC →
+  </a>
+</div>
+
+
+<!-- HERO -->
 <section class="hero">
-  <div class="blueprint-bg"></div>
-  <div class="crosshair" style="top:14%; left:8%;"></div>
-  <div class="crosshair" style="bottom:12%; left:22%;"></div>
-  <span class="coords" style="top:18%; right:8%;">LAT 00.00 / LON 00.00</span>
-  <span class="coords" style="bottom:10%; left:8%;">GLOBAL-SSC / WEB-01</span>
+
+  <div class="hero-grid"></div>
+
+  <div class="corner tl"></div>
+  <div class="corner br"></div>
+
+  <span class="coordinates">
+    GLOBAL-SSC / WEB-2040 / INDIA
+  </span>
 
   <div class="hero-inner">
-    <div class="eyebrow mono">DESIGN &amp; DEVELOPMENT STUDIO</div>
-    <h1>Build your dreams<br>and ideas <em>into a website.</em></h1>
-    <p>Global SSC turns your business, brand, or idea into a website that works as hard as you do — designed, built, and launched by people who care about the details.</p>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      DESIGN & DEVELOPMENT STUDIO / ONLINE
+    </div>
+
+    <h1>
+      Build your dreams
+      <span>and ideas</span>
+      <span class="gradient-text">into a website.</span>
+    </h1>
+
+    <p>
+      Global SSC turns your business, brand, or idea into a website
+      that works as hard as you do — designed, built, and launched
+      by people who care about the details.
+    </p>
+
     <div class="hero-ctas">
-      <a class="btn-primary" href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website." target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website."
+        target="_blank"
+        rel="noopener"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+        </svg>
         Chat on WhatsApp
       </a>
-      <a class="btn-secondary" href="#services">See what we build</a>
+
+      <a class="btn btn-secondary" href="#services">
+        Explore what we build →
+      </a>
+
     </div>
+
   </div>
 
-  <div class="hero-tag">EST.<br>2024</div>
+  <!-- HOLOGRAPHIC CORE -->
+  <div class="hero-data">
+
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+
+    <div class="holo-core"></div>
+
+    <div class="holo-label">
+      DIGITAL EXPERIENCE / ONLINE
+    </div>
+
+  </div>
+
 </section>
 
+
+<!-- SERVICES -->
 <section class="services" id="services">
-  <div class="section-label">01 — WHAT WE BUILD</div>
-  <h2 class="section-title">From a rough idea to a live website.</h2>
-  <p class="section-sub">Whether you're starting a business, launching a brand, or replacing a site that isn't working — we handle the whole build.</p>
 
-  <div class="service-grid">
-    <div class="service-card">
-      <span class="service-num mono">FIG. 01</span>
-      <h3>Business Websites</h3>
-      <p>Clean, fast sites for local businesses, shops, and services — built to bring in calls and customers.</p>
+  <div class="section-wrap">
+
+    <div class="section-label">
+      01 — WHAT WE BUILD
     </div>
-    <div class="service-card">
-      <span class="service-num mono">FIG. 02</span>
-      <h3>Landing Pages</h3>
-      <p>Focused, high-converting pages for a single product, launch, or campaign.</p>
+
+    <h2 class="section-title">
+      From a rough idea to a live website.
+    </h2>
+
+    <p class="section-sub">
+      Whether you're starting a business, launching a brand,
+      or replacing a site that isn't working — we handle the whole build.
+    </p>
+
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 01</span>
+        <h3>Business Websites</h3>
+        <p>
+          Clean, fast sites for local businesses, shops, and services —
+          built to bring in calls and customers.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 02</span>
+        <h3>Landing Pages</h3>
+        <p>
+          Focused, high-converting pages for a single product,
+          launch, or campaign.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 03</span>
+        <h3>E-Commerce</h3>
+        <p>
+          Online stores that make it simple for you to list products
+          and simple for customers to buy.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 04</span>
+        <h3>Portfolio Sites</h3>
+        <p>
+          A polished home for your work — freelancers,
+          creatives, and consultants.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 05</span>
+        <h3>Redesigns</h3>
+        <p>
+          Already have a site that isn't working?
+          We'll rebuild it around what your visitors actually need.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num mono">FIG. 06</span>
+        <h3>Ongoing Support</h3>
+        <p>
+          Updates, fixes, and new pages as your business grows —
+          one WhatsApp message away.
+        </p>
+      </div>
+
     </div>
-    <div class="service-card">
-      <span class="service-num mono">FIG. 03</span>
-      <h3>E-Commerce</h3>
-      <p>Online stores that make it simple for you to list products and simple for customers to buy.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num mono">FIG. 04</span>
-      <h3>Portfolio Sites</h3>
-      <p>A polished home for your work — freelancers, creatives, and consultants.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num mono">FIG. 05</span>
-      <h3>Redesigns</h3>
-      <p>Already have a site that isn't working? We'll rebuild it around what your visitors actually need.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-num mono">FIG. 06</span>
-      <h3>Ongoing Support</h3>
-      <p>Updates, fixes, and new pages as your business grows — one WhatsApp message away.</p>
-    </div>
+
   </div>
+
 </section>
 
+
+<!-- PROCESS -->
 <section id="process">
-  <div class="section-label">02 — HOW IT WORKS</div>
-  <h2 class="section-title">One conversation is all it takes to start.</h2>
-  <p class="section-sub">No long forms, no waiting on email. Message us on WhatsApp and we take it from there.</p>
 
-  <div class="process-list">
-    <div class="process-item">
-      <span class="process-num">01</span>
-      <div>
-        <h3>Tell us your idea</h3>
-        <p>Message us on WhatsApp with what you're building and what the site needs to do.</p>
-      </div>
+  <div class="section-wrap">
+
+    <div class="section-label">
+      02 — HOW IT WORKS
     </div>
-    <div class="process-item">
-      <span class="process-num">02</span>
-      <div>
-        <h3>We plan it out</h3>
-        <p>We come back with a simple plan, timeline, and price — no jargon, no surprises.</p>
+
+    <h2 class="section-title">
+      One conversation is all it takes to start.
+    </h2>
+
+    <p class="section-sub">
+      No long forms, no waiting on email.
+      Message us on WhatsApp and we take it from there.
+    </p>
+
+
+    <div class="process-list">
+
+      <div class="process-item">
+        <span class="process-num">01</span>
+
+        <div>
+          <h3>Tell us your idea</h3>
+          <p>
+            Message us on WhatsApp with what you're building
+            and what the site needs to do.
+          </p>
+        </div>
+
+        <span class="process-arrow">↗</span>
       </div>
-    </div>
-    <div class="process-item">
-      <span class="process-num">03</span>
-      <div>
-        <h3>We design and build</h3>
-        <p>You see drafts along the way and give feedback directly, right in the chat.</p>
+
+
+      <div class="process-item">
+        <span class="process-num">02</span>
+
+        <div>
+          <h3>We plan it out</h3>
+          <p>
+            We come back with a simple plan, timeline, and price —
+            no jargon, no surprises.
+          </p>
+        </div>
+
+        <span class="process-arrow">↗</span>
       </div>
-    </div>
-    <div class="process-item">
-      <span class="process-num">04</span>
-      <div>
-        <h3>We launch it</h3>
-        <p>Your site goes live, and we stay reachable for anything you need after.</p>
+
+
+      <div class="process-item">
+        <span class="process-num">03</span>
+
+        <div>
+          <h3>We design and build</h3>
+          <p>
+            You see drafts along the way and give feedback directly,
+            right in the chat.
+          </p>
+        </div>
+
+        <span class="process-arrow">↗</span>
       </div>
+
+
+      <div class="process-item">
+        <span class="process-num">04</span>
+
+        <div>
+          <h3>We launch it</h3>
+          <p>
+            Your site goes live, and we stay reachable
+            for anything you need after.
+          </p>
+        </div>
+
+        <span class="process-arrow">↗</span>
+      </div>
+
     </div>
+
+
+    <!-- FUTURE SYSTEM PANEL -->
+    <div class="future-panel">
+
+      <div class="future-stat">
+        <strong>01</strong>
+        <span>IDEA → DIGITAL</span>
+      </div>
+
+      <div class="future-stat">
+        <strong>24/7</strong>
+        <span>ONLINE PRESENCE</span>
+      </div>
+
+      <div class="future-stat">
+        <strong>∞</strong>
+        <span>GROWTH POTENTIAL</span>
+      </div>
+
+      <div class="future-stat">
+        <strong>2040</strong>
+        <span>BUILT FORWARD</span>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
+
+<!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="blueprint-bg"></div>
+
   <div class="contact-inner">
-    <h2>Have an idea? Let's build it.</h2>
-    <p>Message Global SSC on WhatsApp and tell us what you're dreaming up.</p>
-    <a class="contact-btn" href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website." target="_blank" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+
+    <div class="contact-kicker">
+      GLOBAL SSC / CONNECTION READY
+    </div>
+
+    <h2>
+      Have an idea?
+      <span class="gradient-text">Let's build it.</span>
+    </h2>
+
+    <p>
+      Message Global SSC on WhatsApp and tell us what you're dreaming up.
+    </p>
+
+    <a
+      class="contact-btn"
+      href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website."
+      target="_blank"
+      rel="noopener"
+    >
+
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/>
+      </svg>
+
       +91 63095 79202
+
     </a>
-    <p class="contact-note">TAP TO OPEN WHATSAPP — REPLIES USUALLY WITHIN A FEW HOURS</p>
+
+    <p class="contact-note">
+      TAP TO OPEN WHATSAPP — REPLIES USUALLY WITHIN A FEW HOURS
+    </p>
+
   </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-  <span>© 2026 Global SSC. Build your dreams and idea into a website.</span>
-  <span class="mono">GLOBAL-SSC / IND</span>
+
+  <span>
+    © 2026 Global SSC. Build your dreams and ideas into a website.
+  </span>
+
+  <span class="mono">
+    GLOBAL-SSC / IND / 2040
+  </span>
+
 </footer>
 
-<a class="wa-float" href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website." target="_blank" rel="noopener" aria-label="Chat with Global SSC on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="#0E1A2B"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+
+<!-- FLOATING WHATSAPP -->
+<a
+  class="wa-float"
+  href="https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website."
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Global SSC on WhatsApp"
+>
+
+  <svg viewBox="0 0 24 24" fill="#06100b">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/>
+  </svg>
+
 </a>
+
+
+<script>
+
+function toggleMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.toggle("open");
+}
+
+function closeMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.remove("open");
+}
+
+/* Close mobile menu when clicking outside */
+document.addEventListener("click",function(event){
+
+  const menu=document.getElementById("mobileMenu");
+  const button=document.querySelector(".menu-btn");
+
+  if(
+    menu.classList.contains("open") &&
+    !menu.contains(event.target) &&
+    !button.contains(event.target)
+  ){
+    menu.classList.remove("open");
+  }
+
+});
+
+</script>
 
 </body>
 </html>
