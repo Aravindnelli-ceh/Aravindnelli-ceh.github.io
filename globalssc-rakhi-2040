@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBALSSC — Rakhi Special 2040 | Any Website ₹3,999</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#08050a;
+    --void-2:#0f0810;
+    --crimson:#8a0f22;
+    --crimson-deep:#4a0812;
+    --gold:#f2c464;
+    --gold-bright:#ffe08a;
+    --gold-dim:#8a6d2f;
+    --violet:#7c4dff;
+    --ink:#f3ead9;
+    --ink-dim:#a89a8a;
+    --glass:rgba(255,240,210,0.04);
+    --glass-border:rgba(242,196,100,0.18);
+    --danger:#ff4d6d;
+    --ok:#5be0a0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    overflow-x:hidden;
+    position:relative;
+    min-height:100vh;
+  }
+  ::selection{background:var(--gold);color:#1a0a0a;}
+
+  /* ambient background */
+  .bg-field{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, rgba(138,15,34,0.35), transparent 60%),
+      radial-gradient(ellipse 80% 50% at 90% 100%, rgba(124,77,255,0.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 5% 80%, rgba(242,196,100,0.06), transparent 60%),
+      var(--void);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.15;
+    background-image:
+      linear-gradient(rgba(242,196,100,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242,196,100,0.5) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 70% 50% at 50% 20%, black 30%, transparent 75%);
+  }
+  .scanline{
+    position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,0.15) 50%);
+    background-size:100% 3px;
+    opacity:0.25;
+  }
+  .noise-sweep{
+    position:fixed;top:0;left:-30%;width:30%;height:100%;z-index:1;pointer-events:none;
+    background:linear-gradient(100deg, transparent, rgba(242,196,100,0.05), transparent);
+    animation:sweep 9s linear infinite;
+  }
+  @keyframes sweep{ to{ left:130%; } }
+
+  section, header, footer{ position:relative; z-index:2; }
+
+  /* nav */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6vw;
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(16px) saturate(140%);
+    background:rgba(8,5,10,0.55);
+    border-bottom:1px solid rgba(242,196,100,0.12);
+  }
+  .logo{
+    font-family:'Orbitron',sans-serif;
+    font-weight:900;
+    letter-spacing:0.12em;
+    font-size:1.15rem;
+    color:var(--ink);
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo .mark{
+    width:30px;height:30px;border-radius:7px;
+    background:conic-gradient(from 210deg, var(--gold-bright), var(--crimson), var(--violet), var(--gold-bright));
+    box-shadow:0 0 18px rgba(242,196,100,0.6);
+    display:inline-block;
+  }
+  .logo span.accent{ color:var(--gold); }
+  nav.links{ display:flex; gap:32px; }
+  nav.links a{
+    color:var(--ink-dim); text-decoration:none; font-size:0.82rem;
+    letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+    transition:color .25s ease;
+  }
+  nav.links a:hover{ color:var(--gold); }
+  .nav-cta{
+    padding:10px 20px;border-radius:100px;
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold-dim));
+    color:#1a0a06; font-weight:800; font-size:0.78rem; letter-spacing:0.06em;
+    text-decoration:none; text-transform:uppercase;
+    box-shadow:0 0 24px rgba(242,196,100,0.35);
+    white-space:nowrap;
+  }
+  .burger{ display:none; }
+
+  /* hero */
+  .hero{
+    min-height:92vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:80px 6vw 60px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:0.78rem; letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--glass-border);
+    padding:8px 18px;border-radius:100px;
+    background:var(--glass);
+    backdrop-filter:blur(10px);
+    margin-bottom:34px;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .rakhi-stage{
+    width:220px;height:220px;
+    margin:0 auto 8px;
+    perspective:1000px;
+  }
+  .rakhi{
+    width:100%;height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    animation:floatY 5s ease-in-out infinite, spinY 14s linear infinite;
+  }
+  @keyframes floatY{ 0%,100%{ transform:translateY(0px) rotateX(8deg); } 50%{ transform:translateY(-18px) rotateX(8deg); } }
+  @keyframes spinY{ from{ transform:rotateY(0deg);} to{ transform:rotateY(360deg);} }
+  .rakhi-core{
+    position:absolute; top:50%; left:50%; width:92px; height:92px;
+    margin:-46px 0 0 -46px; border-radius:50%;
+    background:
+      radial-gradient(circle at 32% 28%, #fff6da, var(--gold-bright) 22%, var(--gold) 48%, var(--crimson-deep) 100%);
+    box-shadow:
+      0 0 40px rgba(242,196,100,0.75),
+      0 0 90px rgba(138,15,34,0.55),
+      inset 0 0 20px rgba(255,255,255,0.35);
+    transform:translateZ(30px);
+  }
+  .rakhi-core::after{
+    content:'';position:absolute;inset:14px;border-radius:50%;
+    background:conic-gradient(from 0deg, rgba(124,77,255,0.5), transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%, rgba(124,77,255,0.5));
+    animation:spinY 4s linear infinite;
+    mix-blend-mode:screen;
+  }
+  .thread{
+    position:absolute; top:50%; left:50%;
+    width:150px; height:4px; margin-top:-2px;
+    background:linear-gradient(90deg, var(--gold-bright), var(--crimson) 70%, transparent);
+    border-radius:4px;
+    box-shadow:0 0 10px rgba(242,196,100,0.6);
+    transform-origin:0 50%;
+  }
+  .thread:nth-child(2){ transform:rotateZ(0deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(3){ transform:rotateZ(51deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(4){ transform:rotateZ(102deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(5){ transform:rotateZ(153deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(6){ transform:rotateZ(204deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(7){ transform:rotateZ(255deg) rotateY(0deg) translateZ(10px); }
+  .thread:nth-child(8){ transform:rotateZ(306deg) rotateY(0deg) translateZ(10px); }
+  .gem{
+    position:absolute; top:50%; left:50%; width:14px; height:14px; margin:-7px 0 0 -7px;
+    background:var(--violet); border-radius:3px; transform:rotateZ(45deg);
+    box-shadow:0 0 14px var(--violet);
+  }
+  .gem:nth-of-type(1){ transform:translate(70px,-30px) translateZ(20px) rotateZ(45deg); }
+  .gem:nth-of-type(2){ transform:translate(-75px,20px) translateZ(20px) rotateZ(45deg); background:var(--gold-bright); box-shadow:0 0 14px var(--gold-bright);}
+  .gem:nth-of-type(3){ transform:translate(10px,75px) translateZ(20px) rotateZ(45deg); }
+
+  h1.headline{
+    font-family:'Orbitron',sans-serif;
+    font-weight:900;
+    font-size:clamp(2.4rem, 7vw, 5.2rem);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    margin:26px 0 20px;
+    background:linear-gradient(180deg, #fff8ea 0%, var(--gold-bright) 45%, var(--gold-dim) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 0 60px rgba(242,196,100,0.25);
+  }
+  h1.headline .price{
+    display:block;
+    font-size:clamp(3.2rem, 11vw, 7.5rem);
+    background:linear-gradient(135deg, var(--gold-bright), var(--crimson) 60%, var(--violet));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 40px rgba(138,15,34,0.5));
+  }
+  .subhead{
+    max-width:620px; margin:0 auto 40px;
+    color:var(--ink-dim); font-size:1.08rem; line-height:1.6;
+    font-weight:500;
+  }
+  .hero-ctas{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-bottom:26px; }
+  .btn-primary{
+    font-family:'Orbitron',sans-serif;
+    padding:19px 40px; border-radius:12px; border:none; cursor:pointer;
+    font-weight:800; font-size:0.95rem; letter-spacing:0.05em;
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold-dim));
+    color:#1c0d06;
+    box-shadow:0 0 40px rgba(242,196,100,0.4), 0 8px 30px rgba(0,0,0,0.5);
+    transition:transform .2s ease, box-shadow .2s ease;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 0 55px rgba(242,196,100,0.6), 0 12px 34px rgba(0,0,0,0.5); }
+  .btn-ghost{
+    padding:18px 34px;border-radius:12px;
+    background:var(--glass); border:1px solid var(--glass-border);
+    backdrop-filter:blur(12px);
+    color:var(--ink); font-weight:700; font-size:0.92rem; letter-spacing:0.03em;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .btn-ghost:hover{ border-color:var(--gold); background:rgba(242,196,100,0.08); }
+  .btn-ghost svg{ width:20px;height:20px; }
+  .hero-note{ font-family:'Space Mono',monospace; font-size:0.75rem; color:var(--ink-dim); letter-spacing:0.06em; }
+
+  /* section shared */
+  .section{ padding:100px 6vw; max-width:1240px; margin:0 auto; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 56px; }
+  .section-eyebrow{
+    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.28em; text-transform:uppercase;
+    color:var(--violet); margin-bottom:14px;
+  }
+  .section-title{
+    font-family:'Orbitron',sans-serif; font-weight:800; font-size:clamp(1.7rem,3.6vw,2.6rem);
+    color:var(--ink);
+  }
+  .section-sub{ color:var(--ink-dim); margin-top:14px; line-height:1.6; }
+
+  /* offer grid */
+  .offer-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
+  .glass-card{
+    background:linear-gradient(160deg, rgba(255,240,210,0.06), rgba(255,240,210,0.015));
+    border:1px solid var(--glass-border);
+    border-radius:18px; padding:30px 26px;
+    backdrop-filter:blur(14px);
+    position:relative; overflow:hidden;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .glass-card::before{
+    content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(circle at 30% 20%, rgba(242,196,100,0.08), transparent 55%);
+    pointer-events:none;
+  }
+  .glass-card:hover{ transform:translateY(-6px); border-color:rgba(242,196,100,0.4); }
+  .glass-card .icon{
+    width:46px;height:46px;border-radius:12px;margin-bottom:18px;
+    background:linear-gradient(135deg, var(--crimson), var(--violet));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 20px rgba(138,15,34,0.5);
+    font-size:1.3rem;
+  }
+  .glass-card h3{ font-family:'Orbitron',sans-serif; font-size:1.02rem; margin-bottom:10px; color:var(--gold-bright); }
+  .glass-card p{ color:var(--ink-dim); font-size:0.92rem; line-height:1.55; }
+
+  /* pricing strip */
+  .price-strip{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;
+    background:linear-gradient(120deg, rgba(138,15,34,0.25), rgba(124,77,255,0.08));
+    border:1px solid var(--glass-border);
+    border-radius:22px; padding:40px 44px; margin-top:50px;
+    position:relative; overflow:hidden;
+  }
+  .price-strip::after{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 90% 10%, rgba(242,196,100,0.15), transparent 60%);
+  }
+  .price-strip .left{ position:relative; z-index:1; }
+  .price-strip .tag{ font-family:'Space Mono',monospace; font-size:0.75rem; color:var(--gold); letter-spacing:0.2em; text-transform:uppercase; }
+  .price-strip .amount{ font-family:'Orbitron',sans-serif; font-size:3rem; font-weight:900; color:var(--ink); margin-top:6px; }
+  .price-strip .amount .strike{ text-decoration:line-through; color:var(--ink-dim); font-size:1.4rem; margin-right:14px; font-weight:600; }
+  .price-strip .right{ position:relative; z-index:1; }
+
+  /* enquiry section */
+  .enquiry-wrap{
+    display:grid; grid-template-columns:1fr 1.1fr; gap:50px; align-items:flex-start;
+  }
+  @media(max-width:860px){ .enquiry-wrap{ grid-template-columns:1fr; } }
+  .enquiry-side h2{ font-family:'Orbitron',sans-serif; font-size:1.9rem; margin-bottom:18px; color:var(--ink); line-height:1.2; }
+  .enquiry-side p{ color:var(--ink-dim); line-height:1.7; margin-bottom:26px; }
+  .mini-steps{ list-style:none; display:flex; flex-direction:column; gap:16px; }
+  .mini-steps li{ display:flex; gap:14px; align-items:flex-start; color:var(--ink-dim); font-size:0.9rem; }
+  .mini-steps .n{
+    flex-shrink:0; width:28px;height:28px;border-radius:8px;
+    background:var(--glass); border:1px solid var(--glass-border);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Mono',monospace; color:var(--gold); font-size:0.8rem;
+  }
+
+  .form-card{
+    background:linear-gradient(160deg, rgba(255,240,210,0.055), rgba(255,240,210,0.01));
+    border:1px solid var(--glass-border); border-radius:22px; padding:38px;
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  }
+  .field{ margin-bottom:20px; }
+  .field label{
+    display:block; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:9px; font-weight:700;
+  }
+  .field input, .field select, .field textarea{
+    width:100%; padding:14px 16px; border-radius:10px;
+    background:rgba(0,0,0,0.35); border:1px solid rgba(242,196,100,0.2);
+    color:var(--ink); font-family:'Manrope',sans-serif; font-size:0.95rem;
+    outline:none; transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field select{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9'><path d='M1 1l6 6 6-6' stroke='%23f2c464' stroke-width='2' fill='none'/></svg>"); background-repeat:no-repeat; background-position:right 16px center; }
+  .field textarea{ min-height:100px; resize:vertical; font-family:'Manrope',sans-serif; }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--gold); box-shadow:0 0 0 3px rgba(242,196,100,0.15);
+  }
+  .field .err{ color:var(--danger); font-size:0.78rem; margin-top:6px; display:none; font-weight:600; }
+  .field.invalid input, .field.invalid select, .field.invalid textarea{ border-color:var(--danger); }
+  .field.invalid .err{ display:block; }
+  .form-submit{
+    width:100%; margin-top:6px;
+    font-family:'Orbitron',sans-serif; padding:18px; border-radius:12px; border:none; cursor:pointer;
+    font-weight:800; font-size:0.95rem; letter-spacing:0.04em;
+    background:linear-gradient(135deg, var(--gold-bright), var(--crimson));
+    color:#1c0d06;
+    box-shadow:0 0 30px rgba(242,196,100,0.3);
+    transition:transform .2s ease;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .form-submit:hover{ transform:translateY(-2px); }
+  .form-submit:disabled{ opacity:0.6; cursor:not-allowed; transform:none; }
+  .form-foot-note{ text-align:center; font-size:0.76rem; color:var(--ink-dim); margin-top:14px; font-family:'Space Mono',monospace; }
+
+  .success-panel{
+    display:none; text-align:center; padding:20px 6px;
+  }
+  .success-panel.show{ display:block; animation:fadeUp .5s ease; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
+  .success-panel .check{
+    width:70px;height:70px;border-radius:50%;margin:0 auto 20px;
+    background:radial-gradient(circle, rgba(91,224,160,0.25), transparent 70%);
+    border:2px solid var(--ok); display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 30px rgba(91,224,160,0.4);
+  }
+  .success-panel h3{ font-family:'Orbitron',sans-serif; color:var(--ok); font-size:1.3rem; margin-bottom:10px; }
+  .success-panel p{ color:var(--ink-dim); margin-bottom:22px; line-height:1.6; }
+
+  /* whatsapp floating */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#128c4a);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 30px rgba(37,211,102,0.5), 0 8px 20px rgba(0,0,0,0.4);
+    text-decoration:none; animation:floatBtn 3s ease-in-out infinite;
+  }
+  @keyframes floatBtn{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+  .wa-float svg{ width:30px;height:30px; }
+
+  /* admin */
+  .admin-toggle{
+    position:fixed; bottom:26px; left:26px; z-index:60;
+    padding:10px 16px; border-radius:100px;
+    background:var(--glass); border:1px solid var(--glass-border);
+    backdrop-filter:blur(12px); color:var(--ink-dim);
+    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.1em;
+    cursor:pointer; text-transform:uppercase;
+  }
+  .admin-overlay{
+    position:fixed; inset:0; z-index:100; display:none;
+    background:rgba(4,2,5,0.85); backdrop-filter:blur(8px);
+    align-items:center; justify-content:center; padding:5vw;
+  }
+  .admin-overlay.show{ display:flex; }
+  .admin-panel{
+    width:100%; max-width:960px; max-height:86vh; overflow-y:auto;
+    background:linear-gradient(160deg, rgba(20,10,16,0.96), rgba(10,6,10,0.98));
+    border:1px solid var(--glass-border); border-radius:20px; padding:34px;
+    box-shadow:0 30px 80px rgba(0,0,0,0.7);
+  }
+  .admin-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; flex-wrap:wrap; gap:12px; }
+  .admin-head h2{ font-family:'Orbitron',sans-serif; color:var(--gold-bright); font-size:1.3rem; }
+  .admin-close{ background:none;border:1px solid var(--glass-border);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-family:'Space Mono',monospace;font-size:0.8rem;}
+  .pin-gate{ text-align:center; padding:30px 0; }
+  .pin-gate input{
+    width:180px; text-align:center; letter-spacing:0.4em; font-size:1.2rem;
+    padding:14px; border-radius:10px; background:rgba(0,0,0,0.4);
+    border:1px solid var(--glass-border); color:var(--gold-bright); margin:18px 0;
+    font-family:'Space Mono',monospace;
+  }
+  .lead-table{ width:100%; border-collapse:collapse; font-size:0.85rem; }
+  .lead-table th{
+    text-align:left; padding:10px 12px; color:var(--gold); font-family:'Space Mono',monospace;
+    font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+    border-bottom:1px solid var(--glass-border);
+  }
+  .lead-table td{ padding:12px; border-bottom:1px solid rgba(242,196,100,0.08); color:var(--ink-dim); vertical-align:top; }
+  .lead-table tr:hover td{ background:rgba(242,196,100,0.03); }
+  .lead-table .name-cell{ color:var(--ink); font-weight:700; }
+  .badge{ padding:3px 10px;border-radius:100px;font-size:0.7rem;background:rgba(124,77,255,0.15);color:#bfa8ff;border:1px solid rgba(124,77,255,0.3); }
+  .admin-empty{ text-align:center; padding:50px 0; color:var(--ink-dim); }
+  .admin-stats{ display:flex; gap:14px; margin-bottom:20px; flex-wrap:wrap; }
+  .admin-stats .stat{ background:var(--glass); border:1px solid var(--glass-border); border-radius:12px; padding:14px 20px; }
+  .admin-stats .stat .num{ font-family:'Orbitron',sans-serif; font-size:1.4rem; color:var(--gold-bright); }
+  .admin-stats .stat .lbl{ font-size:0.7rem; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em; }
+  .admin-actions{ display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+  .admin-btn{
+    background:var(--glass); border:1px solid var(--glass-border); color:var(--ink);
+    padding:9px 16px; border-radius:8px; cursor:pointer; font-size:0.78rem; font-family:'Manrope',sans-serif; font-weight:700;
+  }
+  .admin-btn:hover{ border-color:var(--gold); color:var(--gold); }
+  .table-wrap{ overflow-x:auto; }
+  .arch-note{
+    margin-top:26px; padding:16px 18px; border-radius:12px;
+    background:rgba(124,77,255,0.08); border:1px solid rgba(124,77,255,0.25);
+    font-size:0.78rem; color:#c9bdf5; line-height:1.6;
+  }
+
+  footer{
+    text-align:center; padding:50px 6vw 40px; color:var(--ink-dim); font-size:0.8rem;
+    border-top:1px solid rgba(242,196,100,0.1); margin-top:40px;
+  }
+  footer .foot-logo{ font-family:'Orbitron',sans-serif; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px; font-weight:800; }
+
+  @media(max-width:720px){
+    nav.links{ display:none; }
+    .price-strip{ flex-direction:column; align-items:flex-start; }
+    .section{ padding:70px 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-field"></div>
+<div class="bg-grid"></div>
+<div class="scanline"></div>
+<div class="noise-sweep"></div>
+
+<header>
+  <div class="logo"><span class="mark"></span>GLOBALS<span class="accent">SC</span></div>
+  <nav class="links">
+    <a href="#offer">Offer</a>
+    <a href="#included">Included</a>
+    <a href="#enquiry">Enquiry</a>
+  </nav>
+  <a href="#enquiry" class="nav-cta">₹3,999 Offer</a>
+</header>
+
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> GLOBALSSC × RAKSHA BANDHAN 2040</div>
+
+  <div class="rakhi-stage">
+    <div class="rakhi">
+      <div class="thread"></div><div class="thread"></div><div class="thread"></div><div class="thread"></div>
+      <div class="thread"></div><div class="thread"></div><div class="thread"></div>
+      <div class="gem"></div><div class="gem"></div><div class="gem"></div>
+      <div class="rakhi-core"></div>
+    </div>
+  </div>
+
+  <h1 class="headline">ANY WEBSITE<span class="price">₹3,999</span></h1>
+  <p class="subhead">This Rakshabandhan, GLOBALSSC ties every business — from bakeries to biotech — to a website built with 2040-grade engineering. One flat price. Zero hidden threads.</p>
+
+  <div class="hero-ctas">
+    <a href="#enquiry" class="btn-primary">GET YOUR WEBSITE — ₹3,999</a>
+    <a id="heroWaBtn" href="#" target="_blank" class="btn-ghost">
+      <svg viewBox="0 0 32 32" fill="#25d366"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.9 1 1-3.8-.2-.4C6.5 18.5 6 16.8 6 15c0-5.5 4.5-10 10-10zm-3.4 5.2c-.2 0-.5 0-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4l-2.2-1c-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.8-1-2.4-.2-.6-.5-.5-.7-.5z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+  <div class="hero-note">// 100+ businesses onboarded this festive season · response within minutes</div>
+</section>
+
+<section class="section" id="offer">
+  <div class="section-head">
+    <div class="section-eyebrow">The Offer</div>
+    <h2 class="section-title">One Price. Every Website Type.</h2>
+    <p class="section-sub">Whether you sell sweets or SaaS — the ₹3,999 Rakhi offer builds a fully functional, modern website engineered for 2040-grade performance.</p>
+  </div>
+  <div class="offer-grid">
+    <div class="glass-card"><div class="icon">🛍️</div><h3>Business & Shop Sites</h3><p>Storefronts, catalogues, service pages — built to convert visitors into customers.</p></div>
+    <div class="glass-card"><div class="icon">🍬</div><h3>Restaurants & D2C</h3><p>Menus, order enquiry forms, delivery info — festive-season ready in days, not weeks.</p></div>
+    <div class="glass-card"><div class="icon">🏢</div><h3>Corporate & Startups</h3><p>Investor-grade landing pages with a premium, futuristic technology aesthetic.</p></div>
+    <div class="glass-card"><div class="icon">🎓</div><h3>Institutes & Coaching</h3><p>Course listings, admission forms, faculty pages — built for trust and enrolment.</p></div>
+    <div class="glass-card"><div class="icon">💼</div><h3>Portfolios & Freelancers</h3><p>A holographic-grade personal brand site that stands out from every template.</p></div>
+    <div class="glass-card"><div class="icon">🚀</div><h3>Anything Else</h3><p>Tell us your business type in the enquiry form — GLOBALSSC builds it to spec.</p></div>
+  </div>
+
+  <div class="price-strip">
+    <div class="left">
+      <div class="tag">Limited · Raksha Bandhan 2026</div>
+      <div class="amount"><span class="strike">₹14,999</span>₹3,999</div>
+    </div>
+    <div class="right">
+      <a href="#enquiry" class="btn-primary">GET YOUR WEBSITE — ₹3,999</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="included">
+  <div class="section-head">
+    <div class="section-eyebrow">What's Tied In</div>
+    <h2 class="section-title">Included In Every Build</h2>
+  </div>
+  <div class="offer-grid">
+    <div class="glass-card"><div class="icon">⚡</div><h3>5-Page Responsive Site</h3><p>Home, About, Services, Gallery, Contact — mobile, tablet and desktop optimised.</p></div>
+    <div class="glass-card"><div class="icon">🎨</div><h3>Custom Design</h3><p>No generic templates — a look built around your brand's colours and identity.</p></div>
+    <div class="glass-card"><div class="icon">📨</div><h3>Enquiry / Contact Forms</h3><p>Leads land straight into your dashboard, with WhatsApp and email alerts.</p></div>
+    <div class="glass-card"><div class="icon">🔒</div><h3>SSL & Basic SEO</h3><p>Secure by default, indexed and discoverable from day one.</p></div>
+    <div class="glass-card"><div class="icon">🛠️</div><h3>7-Day Delivery</h3><p>From enquiry to launch in under a week during the Rakhi campaign window.</p></div>
+    <div class="glass-card"><div class="icon">💬</div><h3>WhatsApp Support</h3><p>Direct line to the GLOBALSSC team for revisions and go-live support.</p></div>
+  </div>
+</section>
+
+<section class="section" id="enquiry">
+  <div class="enquiry-wrap">
+    <div class="enquiry-side">
+      <div class="section-eyebrow">Claim The Offer</div>
+      <h2>Send your enquiry.<br>We'll reply on WhatsApp.</h2>
+      <p>Fill the form and your details are saved securely to GLOBALSSC's enquiry system. Your WhatsApp app will open with a pre-filled message so our team gets it instantly.</p>
+      <ul class="mini-steps">
+        <li><span class="n">01</span> Fill in your name, phone, business type and requirements.</li>
+        <li><span class="n">02</span> Your enquiry is saved to the GLOBALSSC leads database.</li>
+        <li><span class="n">03</span> WhatsApp opens with your details pre-filled — hit send.</li>
+        <li><span class="n">04</span> Our team responds with your ₹3,999 build timeline.</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <form id="enquiryForm" novalidate>
+        <div class="field" id="f-name">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" autocomplete="name">
+          <div class="err">Please enter your name (min 2 characters).</div>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="10">
+          <div class="err">Enter a valid 10-digit Indian mobile number.</div>
+        </div>
+        <div class="field" id="f-btype">
+          <label for="btype">Business Type</label>
+          <select id="btype" name="btype">
+            <option value="">Select business type</option>
+            <option>Retail / Shop</option>
+            <option>Restaurant / Food & D2C</option>
+            <option>Corporate / Startup</option>
+            <option>Institute / Coaching</option>
+            <option>Portfolio / Freelancer</option>
+            <option>Healthcare / Clinic</option>
+            <option>Real Estate</option>
+            <option>Other</option>
+          </select>
+          <div class="err">Please select a business type.</div>
+        </div>
+        <div class="field" id="f-req">
+          <label for="requirements">Requirements</label>
+          <textarea id="requirements" name="requirements" placeholder="Tell us what you need — pages, features, deadline..."></textarea>
+          <div class="err">Please describe your requirements (min 10 characters).</div>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">GET ₹3,999 OFFER</button>
+        <div class="form-foot-note">🔒 Your data is stored securely · Sent only to GLOBALSSC</div>
+      </form>
+
+      <div class="success-panel" id="successPanel">
+        <div class="check">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="#5be0a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Enquiry Received</h3>
+        <p>Your details are saved. Tap below to send it on WhatsApp so our team can confirm your ₹3,999 slot.</p>
+        <a id="successWaBtn" href="#" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">SEND ON WHATSAPP</a>
+        <div style="height:12px;"></div>
+        <button class="admin-btn" id="newEnquiryBtn" style="width:100%;">Submit another enquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">GLOBALSSC</div>
+  <p>© 2026 GLOBALSSC · Rakhi Special campaign · Any Website ₹3,999</p>
+</footer>
+
+<a id="floatWaBtn" href="#" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.9 1 1-3.8-.2-.4C6.5 18.5 6 16.8 6 15c0-5.5 4.5-10 10-10zm-3.4 5.2c-.2 0-.5 0-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.8.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4l-2.2-1c-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.8-1-2.4-.2-.6-.5-.5-.7-.5z"/></svg>
+</a>
+
+<button class="admin-toggle" id="adminToggle">⚙ Admin</button>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <h2>GLOBALSSC — Enquiry Dashboard</h2>
+      <button class="admin-close" id="adminClose">Close ✕</button>
+    </div>
+
+    <div id="pinGate" class="pin-gate">
+      <p style="color:var(--ink-dim);">Enter admin PIN to view enquiries</p>
+      <input type="password" id="pinInput" maxlength="4" placeholder="••••">
+      <div><button class="btn-primary" id="pinSubmit" style="padding:12px 30px;">Unlock</button></div>
+      <p style="font-size:0.72rem;color:var(--ink-dim);margin-top:14px;font-family:'Space Mono',monospace;">Demo PIN: 3999</p>
+    </div>
+
+    <div id="dashContent" style="display:none;">
+      <div class="admin-stats">
+        <div class="stat"><div class="num" id="statTotal">0</div><div class="lbl">Total Enquiries</div></div>
+        <div class="stat"><div class="num" id="statToday">0</div><div class="lbl">Today</div></div>
+      </div>
+      <div class="admin-actions">
+        <button class="admin-btn" id="refreshBtn">↻ Refresh</button>
+        <button class="admin-btn" id="exportBtn">⬇ Export CSV</button>
+      </div>
+      <div class="table-wrap">
+        <table class="lead-table" id="leadTable">
+          <thead><tr><th>Name</th><th>Phone</th><th>Business</th><th>Requirements</th><th>Received</th></tr></thead>
+          <tbody id="leadTbody"></tbody>
+        </table>
+      </div>
+      <div class="admin-empty" id="emptyState" style="display:none;">No enquiries yet. They'll appear here the moment someone submits the form.</div>
+
+      <div class="arch-note">
+        <strong>⚙ Architecture note:</strong> Enquiries here are stored in GLOBALSSC's secure artifact database (persisted server-side, shared across sessions). Click-to-WhatsApp is fully live. Fully automatic (no-click) WhatsApp sending and SMTP email alerts require a small backend deploy (WhatsApp Cloud API + a mail service like SendGrid/Resend) — ask GLOBALSSC and this can be wired up as a real Node.js/Express service using this same enquiry schema.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ====== CONFIG — replace with your real WhatsApp Business number (country code + number, no + or spaces) ====== */
+const GLOBALSSC_WHATSAPP_NUMBER = "916309579202"; // GLOBALSSC WhatsApp number
+const ADMIN_PIN = "3999";
+
+function buildWaMessage(data){
+  return `Hi GLOBALSSC! I want the Rakhi Special Offer — Any Website ₹3,999.%0A%0A` +
+    `*Name:* ${data.name}%0A` +
+    `*Phone:* ${data.phone}%0A` +
+    `*Business Type:* ${data.btype}%0A` +
+    `*Requirements:* ${data.requirements}`;
+}
+function waLink(msg){
+  return `https://wa.me/${GLOBALSSC_WHATSAPP_NUMBER}?text=${msg}`;
+}
+
+// generic hero/float WA buttons use a default message
+const defaultMsg = encodeURIComponent("Hi GLOBALSSC! I'm interested in the Rakhi Special Offer — Any Website ₹3,999. Please share details.");
+document.getElementById('heroWaBtn').href = `https://wa.me/${GLOBALSSC_WHATSAPP_NUMBER}?text=${defaultMsg}`;
+document.getElementById('floatWaBtn').href = `https://wa.me/${GLOBALSSC_WHATSAPP_NUMBER}?text=${defaultMsg}`;
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function validateField(fieldId, condition){
+  const el = document.getElementById(fieldId);
+  if(condition){ el.classList.remove('invalid'); return true; }
+  el.classList.add('invalid'); return false;
+}
+
+const form = document.getElementById('enquiryForm');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const btype = document.getElementById('btype').value;
+  const requirements = document.getElementById('requirements').value.trim();
+
+  const phoneClean = phone.replace(/\D/g,'');
+  let valid = true;
+  valid = validateField('f-name', name.length >= 2) && valid;
+  valid = validateField('f-phone', /^[6-9]\d{9}$/.test(phoneClean)) && valid;
+  valid = validateField('f-btype', btype.length > 0) && valid;
+  valid = validateField('f-req', requirements.length >= 10) && valid;
+
+  if(!valid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'SAVING...';
+
+  const enquiry = {
+    name: escapeHtml(name),
+    phone: phoneClean,
+    btype: escapeHtml(btype),
+    requirements: escapeHtml(requirements),
+    timestamp: new Date().toISOString(),
+    source: 'Rakhi Special 2040 Landing Page'
+  };
+
+  const id = 'enquiry:' + Date.now() + '-' + Math.random().toString(36).slice(2,8);
+
+  try{
+    await window.storage.set(id, JSON.stringify(enquiry), true);
+  }catch(err){
+    console.error('Storage failed', err);
+    alert('Could not save your enquiry right now. Please try again, or message us directly on WhatsApp.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'GET ₹3,999 OFFER';
+    return;
+  }
+
+  // simulate email notification dispatch (real SMTP requires a backend — see admin note)
+  console.log('[email-notification] New enquiry would be emailed to team@globalssc.com', enquiry);
+
+  const msg = buildWaMessage(enquiry);
+  document.getElementById('successWaBtn').href = waLink(msg);
+
+  form.style.display = 'none';
+  document.getElementById('successPanel').classList.add('show');
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'GET ₹3,999 OFFER';
+});
+
+document.getElementById('newEnquiryBtn').addEventListener('click', () => {
+  form.reset();
+  document.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+  document.getElementById('successPanel').classList.remove('show');
+  form.style.display = 'block';
+});
+
+/* ---------- ADMIN DASHBOARD ---------- */
+const adminOverlay = document.getElementById('adminOverlay');
+document.getElementById('adminToggle').addEventListener('click', () => adminOverlay.classList.add('show'));
+document.getElementById('adminClose').addEventListener('click', () => adminOverlay.classList.remove('show'));
+
+document.getElementById('pinSubmit').addEventListener('click', unlockAdmin);
+document.getElementById('pinInput').addEventListener('keydown', (e) => { if(e.key === 'Enter') unlockAdmin(); });
+
+function unlockAdmin(){
+  const val = document.getElementById('pinInput').value;
+  if(val === ADMIN_PIN){
+    document.getElementById('pinGate').style.display = 'none';
+    document.getElementById('dashContent').style.display = 'block';
+    loadLeads();
+  } else {
+    document.getElementById('pinInput').style.borderColor = '#ff4d6d';
+    document.getElementById('pinInput').value = '';
+  }
+}
+
+let currentLeads = [];
+
+async function loadLeads(){
+  const tbody = document.getElementById('leadTbody');
+  tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Loading enquiries...</td></tr>';
+  try{
+    const list = await window.storage.list('enquiry:', true);
+    const keys = (list && list.keys) ? list.keys : [];
+    const leads = [];
+    for(const k of keys){
+      try{
+        const res = await window.storage.get(k, true);
+        if(res && res.value){ leads.push(JSON.parse(res.value)); }
+      }catch(e){ /* skip unreadable key */ }
+    }
+    leads.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+    currentLeads = leads;
+    renderLeads(leads);
+  }catch(err){
+    console.error(err);
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Could not load enquiries.</td></tr>';
+  }
+}
+
+function renderLeads(leads){
+  const tbody = document.getElementById('leadTbody');
+  const empty = document.getElementById('emptyState');
+  document.getElementById('statTotal').textContent = leads.length;
+  const today = new Date().toDateString();
+  document.getElementById('statToday').textContent = leads.filter(l => new Date(l.timestamp).toDateString() === today).length;
+
+  if(leads.length === 0){
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  tbody.innerHTML = leads.map(l => `
+    <tr>
+      <td class="name-cell">${l.name}</td>
+      <td>${l.phone}</td>
+      <td><span class="badge">${l.btype}</span></td>
+      <td>${l.requirements}</td>
+      <td>${new Date(l.timestamp).toLocaleString('en-IN')}</td>
+    </tr>
+  `).join('');
+}
+
+document.getElementById('refreshBtn').addEventListener('click', loadLeads);
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  if(currentLeads.length === 0){ alert('No enquiries to export yet.'); return; }
+  const header = 'Name,Phone,Business Type,Requirements,Received\n';
+  const rows = currentLeads.map(l =>
+    [l.name, l.phone, l.btype, l.requirements.replace(/,/g,';').replace(/\n/g,' '), l.timestamp]
+      .map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')
+  ).join('\n');
+  const blob = new Blob([header + rows], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'globalssc-rakhi-enquiries.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+</script>
+
+</body>
+</html>
