@@ -283,6 +283,7 @@
     color:rgba(190,183,255,0.5); font-size:0.62rem; line-height:1.9; text-align:right;
   }
   @media (max-width:800px){
+    .hero{ min-height:auto; padding-bottom:170px; }
     .hero-coords{ display:none; }
     .cube-stage{ width:160px; height:160px; } .face{ width:160px; height:160px; }
     .face-front{ transform:translateZ(80px); } .face-back{ transform:rotateY(180deg) translateZ(80px);}
@@ -698,10 +699,9 @@
     transition:opacity .22s ease, transform .22s ease;
   }
   .bot-bubble.show{ opacity:1; transform:translate3d(var(--bx,0),var(--by,0),0) scale(1); }
-  @media (max-width:640px){ .bot-bubble{ display:none; } }
+  @media (max-width:420px){ .bot-bubble{ max-width:150px; font-size:0.74rem; padding:8px 11px; } }
   @media (prefers-reduced-motion: reduce){ .bot-bubble{ display:none; } }
 
-  @media (max-width:640px){ .ssc-bot{ display:none; } }
   @media (prefers-reduced-motion: reduce){ .ssc-bot{ display:none; } }
 
   /* state: peek — half-hidden, only head visible, shy */
@@ -1368,7 +1368,7 @@
     const bot = document.getElementById('sscBot');
     const bubble = document.getElementById('botBubble');
     const bubbleText = document.getElementById('botBubbleText');
-    const mascotEnabled = bot && !reduceMotion && window.innerWidth >= 640;
+    const mascotEnabled = bot && !reduceMotion;
 
     /* ---------- knowledge base (Global SSC's actual services) ---------- */
     const WA_LINK = 'https://wa.me/916309579202?text=Hi%20Global%20SSC%2C%20I%27d%20like%20to%20build%20a%20website.';
@@ -1994,4 +1994,4 @@
       const features = FEATURE_HINTS.filter(f => f.re.test(sourceText)).map(f => f.label);
       if(!features.length) features.push('Custom design, mobile-friendly build');
       return {
-        busines
+       
