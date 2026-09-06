@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Nelli Aravind | Cybersecurity &amp; IT Operations Professional</title>
+<meta name="description" content="Nelli Aravind — Cybersecurity and IT Operations professional specializing in technical support, networking, Linux, SQL, IPTV/OTT operations and ethical hacking. Available for hire." />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content="Nelli Aravind | Hire Me — Cybersecurity &amp; IT Operations" />
+<meta property="og:description" content="Certified Ethical Hacker &amp; IT Operations professional. Explore an interactive 3D certificate gallery and get in touch directly." />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nelli Aravind | Hire Me" />
+<meta name="twitter:description" content="Cybersecurity &amp; IT Operations professional — Certified Ethical Hacker." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%23070809%22 stroke=%22%234f8ffb%22 stroke-width=%223%22/><text x=%2250%22 y=%2263%22 font-size=%2250%22 fill=%22%23eef2f3%22 text-anchor=%22middle%22 font-family=%22Arial%22>N</text></svg>" />
+
+<style>
+/* ============================================================
+   TOKENS
+   Palette: near-black base, cool blue accent (matches the
+   reference), warm amber reserved only for "note" callouts.
+   ============================================================ */
+:root{
+  --black:#07080a;
+  --panel:#0d1116;
+  --panel-2:#12161c;
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.14);
+  --silver:#9aa4b0;
+  --soft-white:#eef1f4;
+  --blue:#4f8ffb;
+  --blue-dim: rgba(79,143,251,0.14);
+  --blue-glow: rgba(79,143,251,0.35);
+  --amber:#e0a458;
+  --font-display:'Fustat','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ease: cubic-bezier(.16,.84,.44,1);
+  --radius: 14px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+html,body{ margin:0; padding:0; background:var(--black); color:var(--soft-white); font-family:var(--font-body); overflow-x:hidden; width:100%; -webkit-font-smoothing:antialiased; }
+::selection{ background:var(--blue); color:#07080a; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+img{ max-width:100%; display:block; }
+h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; letter-spacing:-.01em; }
+.wrap{ max-width:1320px; margin:0 auto; padding:0 32px; position:relative; z-index:2; }
+section{ padding:96px 0; position:relative; }
+@media(max-width:720px){ .wrap{ padding:0 20px; } section{ padding:64px 0; } }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; border-radius:4px; }
+@media (prefers-reduced-motion: reduce){ *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; } }
+
+.eyebrow{ font-size:12px; letter-spacing:.04em; color:var(--blue); font-weight:600; display:flex; align-items:center; gap:9px; }
+.eyebrow::before{ content:''; width:16px; height:2px; background:var(--blue); display:inline-block; border-radius:2px; }
+.section-head{ max-width:640px; margin-bottom:44px; }
+.section-head h2{ font-size:clamp(26px,3.6vw,42px); line-height:1.1; margin-top:14px; }
+.section-head p{ color:var(--silver); font-size:15.5px; line-height:1.6; margin-top:14px; max-width:520px; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+#nav{ position:fixed; top:0; left:0; right:0; z-index:500; display:flex; align-items:center; justify-content:space-between; padding:20px 32px; transition:transform .5s var(--ease), background .4s ease, backdrop-filter .4s ease; }
+#nav.scrolled{ background:rgba(7,8,10,0.78); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+#nav.hide-nav{ transform:translateY(-110%); }
+.nav-brand{ display:flex; align-items:center; gap:10px; }
+.nav-mark{ width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--blue),#8fb8ff); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; color:#07080a; font-size:15px; flex-shrink:0; }
+.nav-brand-text{ display:flex; flex-direction:column; line-height:1.2; }
+.nav-brand-text strong{ font-family:var(--font-display); font-size:14.5px; letter-spacing:.03em; }
+.nav-brand-text span{ font-size:10px; letter-spacing:.06em; color:var(--silver); margin-top:2px; }
+.nav-links{ display:flex; align-items:center; gap:30px; }
+.nav-links a{ font-size:13px; color:var(--silver); transition:color .3s; }
+.nav-links a:hover{ color:var(--soft-white); }
+.nav-actions{ display:flex; align-items:center; gap:12px; }
+.icon-btn{ width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:transparent; display:flex; align-items:center; justify-content:center; color:var(--soft-white); transition:border-color .3s, background .3s; }
+.icon-btn:hover{ border-color:var(--blue); background:var(--blue-dim); }
+.btn-recruiter{ border:1px solid var(--line); background:transparent; color:var(--soft-white); padding:9px 16px; border-radius:100px; font-size:12px; display:flex; align-items:center; gap:8px; transition:border-color .3s,background .3s; }
+.btn-recruiter:hover{ border-color:var(--blue); background:var(--blue-dim); }
+.btn-recruiter .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); }
+.nav-burger{ display:none; width:36px; height:36px; border:1px solid var(--line); border-radius:50%; align-items:center; justify-content:center; background:transparent; color:var(--soft-white); }
+#mobile-menu{ position:fixed; inset:0; background:var(--black); z-index:600; display:flex; flex-direction:column; justify-content:center; padding:40px; transform:translateY(-100%); transition:transform .5s var(--ease); }
+#mobile-menu.open{ transform:translateY(0); }
+#mobile-menu a{ font-size:26px; font-family:var(--font-display); padding:14px 0; border-bottom:1px solid var(--line); color:var(--soft-white); }
+#mobile-menu .close-menu{ position:absolute; top:24px; right:24px; width:40px; height:40px; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; background:transparent; color:var(--soft-white); }
+@media(max-width:960px){ .nav-links{ display:none; } .nav-burger{ display:flex; } #nav{ padding:16px 20px; } }
+
+/* ============================================================
+   HERO — text left, 3D certificate carousel right (reference layout)
+   ============================================================ */
+#hero{ padding-top:150px; padding-bottom:60px; }
+.hero-grid{ display:grid; grid-template-columns:1fr 1.05fr; gap:50px; align-items:center; }
+.hero-tagline{ font-size:12.5px; letter-spacing:.05em; color:var(--blue); display:flex; gap:8px; margin-bottom:20px; }
+.hero-tagline span{ color:var(--silver); }
+.hero-headline{ font-size:clamp(38px,5.4vw,60px); line-height:1.04; margin-bottom:20px; }
+.hero-sub{ color:var(--silver); font-size:15.5px; line-height:1.65; max-width:440px; margin-bottom:30px; }
+.hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.btn{ padding:13px 22px; border-radius:9px; font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:9px; transition:transform .3s var(--ease), background .3s, border-color .3s, color .3s; border:1px solid transparent; }
+.btn-primary{ background:var(--blue); color:#07080a; }
+.btn-primary:hover{ transform:translateY(-2px); background:#6ba0ff; }
+.btn-ghost{ border-color:var(--line-strong); color:var(--soft-white); background:transparent; }
+.btn-ghost:hover{ transform:translateY(-2px); border-color:var(--blue); color:var(--blue); }
+.btn-whatsapp{ border-color:var(--line-strong); color:var(--soft-white); background:transparent; }
+.btn-whatsapp:hover{ transform:translateY(-2px); border-color:#3ddc84; color:#3ddc84; }
+
+.hero-stage{ position:relative; height:520px; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:radial-gradient(ellipse at 50% 100%, rgba(79,143,251,.10), transparent 62%), linear-gradient(180deg,#0b0e12,#07080a); }
+#hero-canvas{ position:absolute; inset:0; }
+.hero-drag-hint{ position:absolute; bottom:16px; left:50%; transform:translateX(-50%); z-index:5; display:flex; align-items:center; gap:8px; font-size:10.5px; letter-spacing:.04em; color:var(--silver); background:rgba(7,8,10,.55); backdrop-filter:blur(6px); padding:8px 14px; border-radius:100px; border:1px solid var(--line); }
+.hero-nav-btn{ position:absolute; top:50%; transform:translateY(-50%); z-index:5; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:rgba(7,8,10,.55); backdrop-filter:blur(6px); color:var(--soft-white); display:flex; align-items:center; justify-content:center; transition:border-color .3s,background .3s; }
+.hero-nav-btn:hover{ border-color:var(--blue); background:var(--blue-dim); }
+.hero-nav-btn.prev{ left:14px; } .hero-nav-btn.next{ right:14px; }
+
+@media(max-width:960px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-stage{ height:420px; order:-1; }
+  .hero-sub{ max-width:100%; }
+}
+
+/* capability strip */
+.cap-strip{ display:flex; flex-wrap:wrap; gap:0; margin-top:64px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0; }
+.cap-item{ flex:1 1 150px; display:flex; align-items:flex-start; gap:12px; padding:8px 18px; border-left:1px solid var(--line); }
+.cap-item:first-child{ border-left:none; padding-left:0; }
+.cap-ic{ width:34px; height:34px; border-radius:9px; background:var(--blue-dim); color:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cap-item b{ display:block; font-size:13px; font-weight:600; margin-bottom:3px; }
+.cap-item span{ font-size:12px; color:var(--silver); line-height:1.4; }
+@media(max-width:860px){ .cap-item{ flex:1 1 44%; border-left:none; border-top:1px solid var(--line); padding:14px 0 0; margin-top:14px; } }
+
+/* ============================================================
+   DASHBOARD — condensed at-a-glance grid
+   ============================================================ */
+#dashboard{ padding-top:80px; }
+.dash-grid{ display:grid; grid-template-columns:1.1fr 1.1fr 1fr 1fr 1fr; gap:18px; align-items:start; }
+.dash-card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px; height:100%; }
+.dash-card-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px; gap:10px; }
+.dash-card-head h3{ font-size:14px; }
+.dash-card-head p{ font-size:11.5px; color:var(--silver); margin-top:3px; }
+.dash-view-all{ font-size:11.5px; color:var(--blue); white-space:nowrap; display:flex; align-items:center; gap:4px; }
+
+.dash-timeline{ display:flex; flex-direction:column; gap:20px; }
+.dash-timeline-item{ position:relative; padding-left:20px; border-left:2px solid var(--line); }
+.dash-timeline-item::before{ content:''; position:absolute; left:-5px; top:2px; width:8px; height:8px; border-radius:50%; background:var(--blue); }
+.dash-timeline-item .yr{ font-size:11px; color:var(--blue); font-weight:600; }
+.dash-timeline-item .t{ font-size:14px; font-weight:600; margin:4px 0 3px; }
+.dash-timeline-item .d{ font-size:12px; color:var(--silver); line-height:1.5; }
+
+.dash-project-thumb{ width:100%; aspect-ratio:16/10; border-radius:9px; background:linear-gradient(135deg,#101820,#0b0e12); border:1px solid var(--line); margin-bottom:16px; display:flex; align-items:center; justify-content:center; color:var(--blue); }
+.dash-project-t{ font-size:14px; font-weight:600; margin-bottom:6px; }
+.dash-project-d{ font-size:12px; color:var(--silver); line-height:1.55; margin-bottom:12px; }
+.dash-tag-row{ display:flex; flex-wrap:wrap; gap:6px; }
+.dash-tag{ font-size:10.5px; padding:4px 9px; border:1px solid var(--line); border-radius:100px; color:var(--silver); }
+
+.dash-about p{ font-size:13px; color:var(--silver); line-height:1.65; margin-bottom:14px; }
+.dash-signoff{ font-family:'Segoe Script','Brush Script MT',cursive; color:var(--blue); font-size:20px; margin-top:6px; }
+.dash-more-link{ font-size:12px; color:var(--soft-white); border:1px solid var(--line); display:inline-flex; padding:9px 16px; border-radius:9px; margin-top:16px; align-items:center; gap:6px; transition:border-color .3s; }
+.dash-more-link:hover{ border-color:var(--blue); }
+
+.dash-cert-row{ display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
+.dash-cert-row:last-child{ border-bottom:none; }
+.dash-cert-badge{ width:34px; height:34px; border-radius:8px; background:var(--blue-dim); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0; }
+.dash-cert-t{ font-size:12.5px; font-weight:600; line-height:1.4; }
+.dash-cert-d{ font-size:11px; color:var(--silver); margin-top:2px; }
+
+.dash-connect p{ font-size:12.5px; color:var(--silver); line-height:1.6; margin-bottom:18px; }
+.dash-connect-row{ display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); font-size:12.5px; }
+.dash-connect-row:last-of-type{ border-bottom:none; }
+.dash-connect-row .ic{ width:30px; height:30px; border-radius:8px; background:var(--blue-dim); color:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.dash-connect-cta{ width:100%; justify-content:center; margin-top:18px; }
+
+@media(max-width:1180px){ .dash-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .dash-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   FULL CAREER TIMELINE (detail section)
+   ============================================================ */
+.timeline-track{ position:relative; border-left:1px solid var(--line); padding-left:40px; display:flex; flex-direction:column; gap:52px; }
+.timeline-item{ position:relative; }
+.timeline-item::before{ content:''; position:absolute; left:-45.5px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--black); border:1px solid var(--blue); box-shadow:0 0 0 4px var(--blue-dim); }
+.timeline-item h3{ font-size:19px; margin-bottom:6px; }
+.timeline-item .tag{ font-size:11px; color:var(--blue); margin-bottom:12px; display:block; }
+.timeline-item p{ color:var(--silver); font-size:14.5px; line-height:1.7; max-width:640px; }
+.chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.chip{ font-size:11.5px; padding:6px 12px; border:1px solid var(--line); border-radius:100px; color:var(--silver); }
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.skill-card{ background:var(--black); padding:30px 26px; transition:background .35s; }
+.skill-card:hover{ background:var(--panel); }
+.skill-card h3{ font-size:13.5px; color:var(--blue); margin-bottom:16px; }
+.skill-card ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.skill-card li{ font-size:14px; color:var(--soft-white); display:flex; align-items:center; gap:10px; }
+.skill-card li::before{ content:''; width:4px; height:4px; background:var(--silver); border-radius:50%; flex-shrink:0; }
+@media(max-width:860px){ .skills-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:560px){ .skills-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.project-card{ background:var(--black); padding:40px 34px; transition:background .4s; }
+.project-card:hover{ background:var(--panel); }
+.project-card h3{ font-size:20px; margin-bottom:12px; line-height:1.25; }
+.project-card p{ color:var(--silver); font-size:14px; line-height:1.7; margin-bottom:16px; }
+.project-tag-note{ font-size:11.5px; color:var(--amber); border:1px solid rgba(224,164,88,.3); background:rgba(224,164,88,.06); padding:6px 12px; border-radius:6px; display:inline-block; }
+@media(max-width:720px){ .projects-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-layout{ display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:start; }
+.about-photo{ position:relative; }
+.about-photo img{ width:100%; border-radius:var(--radius); border:1px solid var(--line); filter:grayscale(.1); }
+.about-text p{ color:var(--silver); font-size:15.5px; line-height:1.8; margin-bottom:18px; }
+.about-text strong{ color:var(--soft-white); font-weight:600; }
+.about-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:32px; }
+.stat{ background:var(--black); padding:20px 16px; text-align:left; }
+.stat b{ font-family:var(--font-display); font-size:26px; display:block; color:var(--blue); }
+.stat span{ font-size:11px; color:var(--silver); }
+@media(max-width:860px){ .about-layout{ grid-template-columns:1fr; gap:36px; } .about-photo{ max-width:320px; } }
+
+/* ============================================================
+   RESUME
+   ============================================================ */
+.resume-box{ border:1px solid var(--line); border-radius:var(--radius); padding:56px; text-align:center; background:radial-gradient(ellipse at 50% 0%, rgba(79,143,251,.08), transparent 70%); }
+.resume-box h2{ font-size:clamp(26px,4vw,42px); line-height:1.15; margin-bottom:18px; }
+.resume-box p{ color:var(--silver); max-width:460px; margin:0 auto 30px; font-size:14.5px; line-height:1.7; }
+.resume-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+@media(max-width:600px){ .resume-box{ padding:40px 22px; } }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact{ text-align:center; }
+.contact-head h2{ font-size:clamp(30px,5vw,54px); line-height:1.08; }
+.contact-sub{ color:var(--silver); font-size:15px; max-width:440px; margin:16px auto 40px; }
+.contact-methods{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:18px; }
+.contact-card{ border:1px solid var(--line); border-radius:var(--radius); padding:22px 26px; min-width:220px; text-align:left; display:flex; align-items:center; gap:14px; transition:border-color .3s, transform .3s; background:var(--panel); }
+.contact-card:hover{ border-color:var(--blue); transform:translateY(-3px); }
+.contact-card .ic{ width:38px; height:38px; border-radius:9px; background:var(--blue-dim); color:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.contact-card .cc-label{ font-size:10.5px; color:var(--silver); margin-bottom:3px; }
+.contact-card .cc-value{ font-size:14px; font-weight:600; }
+
+footer{ border-top:1px solid var(--line); padding:30px 0; text-align:center; color:var(--silver); font-size:12px; }
+footer a{ color:var(--soft-white); }
+
+/* ============================================================
+   CERTIFICATE MODAL
+   ============================================================ */
+#cert-modal{ position:fixed; inset:0; z-index:900; background:rgba(5,6,7,.92); backdrop-filter:blur(10px); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .4s var(--ease), visibility .4s var(--ease); padding:24px; }
+#cert-modal.open{ opacity:1; visibility:visible; }
+.cert-modal-inner{ display:flex; gap:44px; max-width:1080px; width:100%; align-items:center; }
+.cert-modal-img{ flex:1.1; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--panel-2); box-shadow:0 40px 90px rgba(0,0,0,.6); }
+.cert-modal-info{ flex:1; max-width:380px; }
+.cert-modal-info .label{ font-size:10.5px; color:var(--blue); margin-bottom:6px; margin-top:22px; }
+.cert-modal-info .label:first-child{ margin-top:0; }
+.cert-modal-info .value{ font-size:17px; font-family:var(--font-display); font-weight:600; }
+.cert-modal-info .value.small{ font-size:14.5px; font-weight:500; color:var(--soft-white); }
+.cert-modal-actions{ display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
+.cert-close{ position:absolute; top:26px; right:32px; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--soft-white); display:flex; align-items:center; justify-content:center; }
+@media(max-width:820px){ .cert-modal-inner{ flex-direction:column; } .cert-modal-info{ max-width:100%; } }
+
+/* ============================================================
+   RECRUITER MODE
+   ============================================================ */
+#recruiter-view{ position:fixed; inset:0; z-index:800; background:var(--black); overflow-y:auto; transform:translateY(100%); transition:transform .55s var(--ease); padding:0 0 60px; }
+#recruiter-view.open{ transform:translateY(0); }
+.rec-top{ display:flex; justify-content:space-between; align-items:center; padding:24px 32px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--black); z-index:5; }
+.rec-exit{ display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:100px; padding:9px 16px; font-size:11.5px; background:transparent; color:var(--soft-white); }
+.rec-body{ max-width:820px; margin:0 auto; padding:50px 32px; }
+.rec-header{ display:flex; gap:22px; align-items:center; margin-bottom:44px; flex-wrap:wrap; }
+.rec-header img{ width:84px; height:84px; border-radius:12px; object-fit:cover; border:1px solid var(--line); }
+.rec-header h1{ font-size:28px; }
+.rec-header p{ color:var(--blue); font-size:14px; margin-top:6px; }
+.rec-block{ margin-bottom:42px; }
+.rec-block h4{ font-size:11.5px; color:var(--blue); margin-bottom:16px; }
+.rec-list{ display:flex; flex-wrap:wrap; gap:10px; }
+.rec-chip{ border:1px solid var(--line); padding:9px 15px; border-radius:100px; font-size:13px; }
+.rec-row{ display:flex; justify-content:space-between; gap:20px; padding:15px 0; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+.rec-row .t{ font-weight:600; font-size:14.5px; } .rec-row .d{ color:var(--silver); font-size:12.5px; }
+.rec-cta{ text-align:center; padding:40px 22px; border:1px solid var(--line); border-radius:var(--radius); margin-top:18px; }
+.rec-cta h3{ font-size:22px; margin-bottom:20px; }
+.rec-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+#wa-float{ position:fixed; bottom:26px; right:26px; z-index:700; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(0,0,0,.4); transition:transform .3s var(--ease); }
+#wa-float:hover{ transform:scale(1.08); }
+.vh{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* ============================================================
+   MASCOT BOT — floating bottom-left, opposite the WhatsApp button
+   ============================================================ */
+#mascot{ position:fixed; bottom:26px; left:26px; z-index:700; display:flex; flex-direction:column; align-items:flex-start; }
+#mascot-bot{ position:relative; width:56px; height:56px; border-radius:50%; border:1px solid var(--line-strong); background:linear-gradient(150deg,var(--panel-2),var(--panel)); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(0,0,0,.45); padding:0; animation:mascot-bob 3.4s ease-in-out infinite; transition:transform .3s var(--ease), border-color .3s; }
+#mascot-bot:hover{ transform:scale(1.08); border-color:var(--blue); }
+#mascot-bot:active{ transform:scale(.95); }
+.mascot-eye{ transform-origin:center; animation:mascot-blink 4.8s ease-in-out infinite; }
+.mascot-eye.right{ animation-delay:.06s; }
+@keyframes mascot-bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+@keyframes mascot-blink{ 0%,90%,100%{ transform:scaleY(1); } 94%{ transform:scaleY(.12); } }
+
+.mascot-bubble{ position:absolute; bottom:68px; left:0; min-width:180px; max-width:216px; background:var(--panel); border:1px solid var(--line-strong); border-radius:14px; padding:12px 14px; font-size:12.5px; line-height:1.5; color:var(--soft-white); box-shadow:0 20px 45px rgba(0,0,0,.5); opacity:0; transform:translateY(8px) scale(.96); pointer-events:none; transition:opacity .35s var(--ease), transform .35s var(--ease); }
+.mascot-bubble::after{ content:''; position:absolute; bottom:-6px; left:20px; width:12px; height:12px; background:var(--panel); border-right:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong); transform:rotate(45deg); }
+.mascot-bubble.show{ opacity:1; transform:translateY(0) scale(1); pointer-events:auto; }
+
+@media(max-width:720px){ #mascot{ left:16px; bottom:16px; } #wa-float{ right:16px; bottom:16px; } }
+</style>
+</head>
+<body>
+
+<!-- ============================= NAV ============================= -->
+<nav id="nav" aria-label="Primary">
+  <div class="nav-brand">
+    <div class="nav-mark">N</div>
+    <div class="nav-brand-text">
+      <strong>NELLI ARAVIND</strong>
+      <span>CYBERSECURITY &amp; IT OPERATIONS PROFESSIONAL</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#projects">Work</a>
+    <a href="#hero-gallery">Certificates</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button class="btn-recruiter" id="recruiter-toggle"><span class="dot"></span> Recruiter mode</button>
+    <button class="nav-burger" id="burger-btn" aria-label="Open menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <button class="close-menu" id="close-menu" aria-label="Close menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="#hero">Home</a>
+  <a href="#projects">Work</a>
+  <a href="#hero-gallery">Certificates</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============================= HERO ============================= -->
+<header id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tagline"><span>Secure</span>·<span>Solve</span>·<span>Scale</span></div>
+        <h1 class="hero-headline">Securing the digital world.</h1>
+        <p class="hero-sub">Cybersecurity-minded IT professional building reliable, secure and scalable digital operations — from network troubleshooting to ethical hacking.</p>
+        <div class="hero-ctas">
+          <a href="#hero-gallery" class="btn btn-primary">View my journey</a>
+          <a href="assets/cv.pdf" download class="btn btn-ghost">Download CV</a>
+        </div>
+        <div class="hero-ctas">
+          <a href="https://wa.me/916309579202" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.32c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.7 8.24-8.25 8.24z"/></svg>
+            WhatsApp me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="hero-gallery">
+        <canvas id="gallery-canvas"></canvas>
+        <button class="hero-nav-btn prev" id="gal-prev" aria-label="Previous certificate">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="hero-nav-btn next" id="gal-next" aria-label="Next certificate">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="hero-drag-hint">Drag to rotate · click to open · ← → keys</div>
+      </div>
+    </div>
+
+    <div class="cap-strip">
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <div><b>Cybersecurity</b><span>Ethical hacking &amp; security fundamentals</span></div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.5"/><circle cx="4" cy="6" r="1.8"/><circle cx="20" cy="6" r="1.8"/><circle cx="4" cy="18" r="1.8"/><circle cx="20" cy="18" r="1.8"/><path d="M5.6 7.2L10 11M18.4 7.2L14 11M5.6 16.8L10 13M18.4 16.8L14 13"/></svg></div>
+        <div><b>Networking</b><span>TCP/IP, DNS, routing &amp; troubleshooting</span></div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div><b>Linux &amp; systems</b><span>Server monitoring &amp; troubleshooting</span></div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <div><b>Database</b><span>SQL, PostgreSQL, MariaDB, Cassandra, Redis</span></div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15a4 4 0 100-8 4 4 0 000 8z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1.08-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852 1 1.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <div><b>IT support</b><span>Incident handling &amp; monitoring</span></div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <div><b>IPTV / OTT</b><span>Operations, middleware, backend coordination</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= DASHBOARD ============================= -->
+<section id="dashboard">
+  <div class="wrap">
+    <div class="dash-grid">
+
+      <div class="dash-card">
+        <div class="dash-card-head">
+          <div><h3>Experience timeline</h3><p>My professional journey so far</p></div>
+        </div>
+        <div class="dash-timeline">
+          <div class="dash-timeline-item">
+            <div class="yr">2024 – 2025</div>
+            <div class="t">Certified Ethical Hacker (CEH v12)</div>
+            <div class="d">EC-Council accredited training at Hacker School, followed by official certification.</div>
+          </div>
+          <div class="dash-timeline-item">
+            <div class="yr">IT / IPTV &amp; OTT</div>
+            <div class="t">Operations &amp; backend coordination</div>
+            <div class="d">Middleware, partner &amp; channel management, RADIUS, server coordination.</div>
+          </div>
+          <div class="dash-timeline-item">
+            <div class="yr">2023</div>
+            <div class="t">Core Python training</div>
+            <div class="d">Millennium Software Solutions — programming fundamentals.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-card">
+        <div class="dash-card-head">
+          <div><h3>Featured projects</h3><p>Solutions built with purpose</p></div>
+          <a href="#projects" class="dash-view-all">View all →</a>
+        </div>
+        <div class="dash-project-thumb">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l4-4 4 4 4-6 4 6M3 18h18"/></svg>
+        </div>
+        <div class="dash-project-t">IPTV / OTT operations platform</div>
+        <div class="dash-project-d">End-to-end monitoring, partner management, channel operations, middleware &amp; backend coordination.</div>
+        <div class="dash-tag-row"><span class="dash-tag">IPTV</span><span class="dash-tag">Middleware</span><span class="dash-tag">Monitoring</span></div>
+      </div>
+
+      <div class="dash-card dash-about">
+        <div class="dash-card-head"><div><h3>About me</h3><p>More than just a resume</p></div></div>
+        <p>Technical professional with hands-on IT operations experience and a growing foundation in cybersecurity.</p>
+        <p>Certified Ethical Hacker with a strong grounding in security principles and a problem-solving mindset.</p>
+        <p>I love turning complex problems into simple, reliable and secure solutions.</p>
+        <div class="dash-signoff">Nelli Aravind</div>
+        <a href="#about" class="dash-more-link">More about me →</a>
+      </div>
+
+      <div class="dash-card">
+        <div class="dash-card-head">
+          <div><h3>Certifications</h3><p>My credentials &amp; achievements</p></div>
+          <a href="#career" class="dash-view-all">View all →</a>
+        </div>
+        <div class="dash-cert-row">
+          <div class="dash-cert-badge">CEH</div>
+          <div><div class="dash-cert-t">Certified Ethical Hacker (CEH)</div><div class="dash-cert-d">EC-Council · 30 Oct 2025</div></div>
+        </div>
+        <div class="dash-cert-row">
+          <div class="dash-cert-badge">CEH</div>
+          <div><div class="dash-cert-t">CEH v12 — Certificate of Attendance</div><div class="dash-cert-d">Hacker School · 01 Nov 2024</div></div>
+        </div>
+        <div class="dash-cert-row">
+          <div class="dash-cert-badge">CAT</div>
+          <div><div class="dash-cert-t">Product Design &amp; Drafting by CATIA</div><div class="dash-cert-d">APSSDC · 25–30 Oct 2021</div></div>
+        </div>
+        <div class="dash-cert-row">
+          <div class="dash-cert-badge">PY</div>
+          <div><div class="dash-cert-t">Core Python</div><div class="dash-cert-d">Millennium Software Solutions · 2023</div></div>
+        </div>
+      </div>
+
+      <div class="dash-card dash-connect">
+        <div class="dash-card-head"><div><h3>Let's connect</h3><p>Open to opportunities worldwide</p></div></div>
+        <p>Available for technical support, IT operations, network operations and cybersecurity roles — open to direct hire.</p>
+        <div class="dash-connect-row">
+          <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>
+          Naiduaravind169@gmail.com
+        </div>
+        <div class="dash-connect-row">
+          <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2z"/></svg></span>
+          +91 63095 79202
+        </div>
+        <div class="dash-connect-row">
+          <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 5.5 5.5 5.5 0 0121.5 12c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+          India
+        </div>
+        <a href="#contact" class="btn btn-primary dash-connect-cta">Let's work together →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<main id="recruiter-hide-target">
+
+  <!-- ============================= CAREER TIMELINE (detail) ============================= -->
+  <section id="career">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Career path</div>
+        <h2>From operations to security.</h2>
+        <p>A practical foundation in IT and IPTV/OTT operations, growing into cybersecurity and ethical hacking.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-track">
+          <div class="timeline-item">
+            <span class="tag">Cybersecurity training · 2024–2025</span>
+            <h3>Certified Ethical Hacker (CEH v12)</h3>
+            <p>Completed EC-Council accredited training at Hacker School (a subsidiary of Cartel Software) under instructor Jayanth Betha, followed by official EC-Council CEH certification.</p>
+            <div class="chip-row"><span class="chip">Ethical Hacking</span><span class="chip">Network Security</span><span class="chip">Vulnerability Awareness</span></div>
+          </div>
+          <div class="timeline-item">
+            <span class="tag">IT / IPTV &amp; OTT operations</span>
+            <h3>IT Operations &amp; Backend Coordination</h3>
+            <p>Hands-on exposure to IPTV/OTT operational workflows — partner creation and partner logo management, middleware coordination, box &amp; app templates, channel logo management, RADIUS, server coordination, application monitoring and technical troubleshooting.</p>
+            <div class="chip-row"><span class="chip">Middleware</span><span class="chip">RADIUS</span><span class="chip">App Monitoring</span><span class="chip">Server Coordination</span></div>
+          </div>
+          <div class="timeline-item">
+            <span class="tag">Training · 2023</span>
+            <h3>Core Python — Millennium Software Solutions</h3>
+            <p>Completed structured training in Core Python (02 May – 16 Jun 2023), building programming fundamentals that support scripting and troubleshooting work.</p>
+            <div class="chip-row"><span class="chip">Python Fundamentals</span></div>
+          </div>
+          <div class="timeline-item">
+            <span class="tag">Training · 2021</span>
+            <h3>Product Design &amp; Drafting by CATIA — APSSDC</h3>
+            <p>Participated in a structured training program (25–30 Oct 2021) at Avanthi Institute of Engineering &amp; Technology, Tagarapuvalasa, under the Andhra Pradesh State Skill Development Corporation.</p>
+            <div class="chip-row"><span class="chip">Technical Training</span></div>
+          </div>
+          <div class="timeline-item">
+            <span class="tag">Education &amp; achievement</span>
+            <h3>Engineering studies &amp; extracurricular merit</h3>
+            <p>Affiliated with JNTUK Kakinada through Avanthi Institute of Engineering &amp; Technology. Recognized at the JNTUK Inter-Collegiate Weight Lifting / Power Lifting / Best Physique Championship (Dec 2021) and the AVENSIS 2K20 National Youth Fest, where a runner-up prize was secured in Kabaddi.</p>
+            <div class="chip-row"><span class="chip">Discipline</span><span class="chip">Consistency</span><span class="chip">Teamwork</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= SKILLS ============================= -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Capabilities</div>
+        <h2>A technical toolkit built for operations and security.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Cybersecurity</h3>
+          <ul><li>Ethical Hacking</li><li>Security Fundamentals</li><li>Vulnerability Awareness</li><li>Network Security Fundamentals</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Networking</h3>
+          <ul><li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>Networking Troubleshooting</li><li>RADIUS</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Linux</h3>
+          <ul><li>Linux Basics</li><li>Ubuntu</li><li>System Troubleshooting</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Database</h3>
+          <ul><li>SQL</li><li>PostgreSQL</li><li>MariaDB</li><li>Cassandra</li><li>Redis</li><li>KeyDB</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Support</h3>
+          <ul><li>Technical Support</li><li>Ticket Management</li><li>Application Monitoring</li><li>Incident Troubleshooting</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Operations</h3>
+          <ul><li>IPTV</li><li>OTT</li><li>Middleware</li><li>Backend Coordination</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROJECTS ============================= -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Featured projects</div>
+        <h2>Conceptual and applied work.</h2>
+        <p>Personal and conceptual projects reflecting hands-on learning — not production systems for named employers.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Secure Digital Operations</h3>
+          <p>A conceptual cybersecurity and IT operations environment focused on monitoring, troubleshooting and secure digital infrastructure.</p>
+          <span class="project-tag-note">Conceptual project</span>
+        </div>
+        <div class="project-card">
+          <h3>IPTV / OTT Operations</h3>
+          <p>Practical exposure to middleware, channel management, partner operations, application troubleshooting and backend coordination in IPTV/OTT environments.</p>
+          <span class="project-tag-note">Operational experience</span>
+        </div>
+        <div class="project-card">
+          <h3>Cybersecurity Lab</h3>
+          <p>Self-directed learning environment covering Linux, networking, ethical hacking fundamentals, and general security troubleshooting.</p>
+          <span class="project-tag-note">Personal learning project</span>
+        </div>
+        <div class="project-card">
+          <h3>Interactive Career Portfolio</h3>
+          <p>This portfolio itself — a dashboard-style career site combining a WebGL certificate viewer with clear, scannable storytelling.</p>
+          <span class="project-tag-note">This website</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">About</div>
+        <h2>Beyond the certificate.</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-photo">
+          <img src="assets/profile.jpg" alt="Portrait of Nelli Aravind" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <p>I'm <strong>Nelli Aravind</strong>, a technical professional with hands-on IT operations experience and a growing foundation in cybersecurity. My background spans <strong>IPTV and OTT operations</strong> — coordinating middleware, partner setups and backend systems — alongside core IT skills in <strong>networking, Linux and SQL</strong>.</p>
+          <p>In 2024–2025 I completed my <strong>Certified Ethical Hacker (CEH v12)</strong> training and certification through EC-Council, sharpening my understanding of security fundamentals, vulnerability awareness and network defense.</p>
+          <p>I enjoy troubleshooting — tracing an issue back to its root cause, whether it's a network fault, an application error, or a monitoring alert. I'm continuing to build depth in cybersecurity while staying grounded in practical, day-to-day IT operations.</p>
+          <div class="about-stats">
+            <div class="stat"><b>1</b><span>CEH Certification</span></div>
+            <div class="stat"><b>5+</b><span>Technical domains</span></div>
+            <div class="stat"><b>6</b><span>Verified credentials</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= RESUME ============================= -->
+  <section id="resume">
+    <div class="wrap">
+      <div class="resume-box">
+        <div class="eyebrow" style="justify-content:center;">Resume</div>
+        <h2>Ready for the next challenge.</h2>
+        <p>Full details of my certifications, training and operational experience are available in my CV — or explore the recruiter view for a quick scan.</p>
+        <div class="resume-ctas">
+          <a href="assets/cv.pdf" download class="btn btn-primary">Download CV</a>
+          <a href="#hero-gallery" class="btn btn-ghost">View certificates</a>
+          <a href="#contact" class="btn btn-ghost">Contact me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <div class="eyebrow" style="justify-content:center;">Get in touch</div>
+      <h2>Let's build something secure.</h2>
+      <p class="contact-sub">Available for technical support, IT operations, network operations and cybersecurity opportunities — open to direct hire.</p>
+    </div>
+    <div class="contact-methods">
+      <a class="contact-card" href="mailto:Naiduaravind169@gmail.com">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></span>
+        <span><span class="cc-label">Email</span><span class="cc-value">Naiduaravind169@gmail.com</span></span>
+      </a>
+      <a class="contact-card" href="https://wa.me/916309579202" target="_blank" rel="noopener">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2z"/></svg></span>
+        <span><span class="cc-label">WhatsApp / call</span><span class="cc-value">+91 63095 79202</span></span>
+      </a>
+      <a class="contact-card" id="linkedin-card" href="#" onclick="return false;" title="Add your LinkedIn URL in the config">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23h-4.5V8.25zM8.5 8.25h4.31v2.01h.06c.6-1.13 2.07-2.33 4.26-2.33 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.69 1.82-2.69 3.7V23h-4.5V8.25z"/></svg></span>
+        <span><span class="cc-label">LinkedIn</span><span class="cc-value">Add your URL — see config.js</span></span>
+      </a>
+    </div>
+    <div class="resume-ctas" style="justify-content:center;">
+      <a href="assets/cv.pdf" download class="btn btn-ghost">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Nelli Aravind. Built as an interactive career portfolio.</div>
+</footer>
+
+<a id="wa-float" href="https://wa.me/916309579202" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#07080a"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.18 8.18 0 0 1-1.26-4.32c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.7 8.24-8.25 8.24z"/></svg>
+</a>
+
+<!-- ============================= MASCOT BOT ============================= -->
+<div id="mascot">
+  <div class="mascot-bubble" id="mascot-bubble" role="status" aria-live="polite"></div>
+  <button id="mascot-bot" aria-label="Say hi to Cipher, the site mascot" title="Say hi">
+    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect x="3" y="17" width="4" height="8" rx="2" fill="#12161c" stroke="#4f8ffb" stroke-width="1.4"/>
+      <rect x="33" y="17" width="4" height="8" rx="2" fill="#12161c" stroke="#4f8ffb" stroke-width="1.4"/>
+      <rect x="18" y="3" width="4" height="7" rx="2" fill="#4f8ffb"/>
+      <circle cx="20" cy="3" r="2.2" fill="#4f8ffb"/>
+      <rect x="8" y="10" width="24" height="21" rx="9" fill="#12161c" stroke="#4f8ffb" stroke-width="1.6"/>
+      <ellipse class="mascot-eye left" cx="16" cy="20" rx="2.3" ry="3" fill="#4f8ffb"/>
+      <ellipse class="mascot-eye right" cx="24" cy="20" rx="2.3" ry="3" fill="#4f8ffb"/>
+      <path d="M15 26q5 3 10 0" stroke="#4f8ffb" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ============================= CERTIFICATE MODAL ============================= -->
+<div id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+  <button class="cert-close" id="cert-close" aria-label="Close certificate viewer">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="cert-modal-inner">
+    <div class="cert-modal-img"><img id="cert-modal-image" src="" alt="" /></div>
+    <div class="cert-modal-info">
+      <div class="label">Certification</div>
+      <div class="value" id="cert-modal-title"></div>
+      <div class="label">Issuer</div>
+      <div class="value small" id="cert-modal-issuer"></div>
+      <div class="label">Date</div>
+      <div class="value small" id="cert-modal-date"></div>
+      <div class="label">Category</div>
+      <div class="value small" id="cert-modal-category"></div>
+      <div class="label" id="cert-verif-label" style="display:none;">Verification</div>
+      <div class="value small" id="cert-modal-verif" style="display:none;"></div>
+      <div class="cert-modal-actions">
+        <button class="btn btn-ghost" id="cert-open-full">Open full certificate</button>
+        <button class="btn btn-primary" id="cert-back">Back to gallery</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= RECRUITER MODE ============================= -->
+<div id="recruiter-view" role="dialog" aria-modal="true" aria-label="Recruiter mode">
+  <div class="rec-top">
+    <div class="nav-brand"><div class="nav-mark">N</div><div class="nav-brand-text"><strong>NELLI ARAVIND</strong><span>RECRUITER VIEW</span></div></div>
+    <button class="rec-exit" id="rec-exit">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Exit recruiter mode
+    </button>
+  </div>
+  <div class="rec-body">
+    <div class="rec-header">
+      <img src="assets/profile.jpg" alt="Nelli Aravind" />
+      <div>
+        <h1>Nelli Aravind</h1>
+        <p>Cybersecurity &amp; IT Operations Professional</p>
+      </div>
+    </div>
+
+    <div class="rec-block">
+      <h4>Key skills</h4>
+      <div class="rec-list">
+        <span class="rec-chip">Ethical Hacking</span><span class="rec-chip">Networking (TCP/IP, DNS, DHCP, RADIUS)</span>
+        <span class="rec-chip">Linux</span><span class="rec-chip">SQL</span><span class="rec-chip">Technical Support</span>
+        <span class="rec-chip">IPTV / OTT Operations</span><span class="rec-chip">Application Monitoring</span>
+      </div>
+    </div>
+
+    <div class="rec-block">
+      <h4>Experience</h4>
+      <div class="rec-row"><span class="t">IT / IPTV &amp; OTT Operations</span><span class="d">Middleware, partner &amp; channel management, backend coordination</span></div>
+      <div class="rec-row"><span class="t">Technical Troubleshooting &amp; Monitoring</span><span class="d">Application monitoring, incident troubleshooting, server coordination</span></div>
+    </div>
+
+    <div class="rec-block">
+      <h4>Certifications</h4>
+      <div class="rec-row"><span class="t">Certified Ethical Hacker (CEH) — EC-Council</span><span class="d">Issued 30 Oct 2025 · No. ECC3691802457</span></div>
+      <div class="rec-row"><span class="t">CEH v12 — Certificate of Attendance</span><span class="d">Hacker School (Cartel Software) · Nov 2024</span></div>
+      <div class="rec-row"><span class="t">Core Python — Millennium Software Solutions</span><span class="d">May–Jun 2023</span></div>
+      <div class="rec-row"><span class="t">Product Design &amp; Drafting by CATIA — APSSDC</span><span class="d">Oct 2021</span></div>
+    </div>
+
+    <div class="rec-block">
+      <h4>Education</h4>
+      <div class="rec-row"><span class="t">Avanthi Institute of Engineering &amp; Technology</span><span class="d">Affiliated to JNTUK, Kakinada</span></div>
+    </div>
+
+    <div class="rec-block">
+      <h4>Availability</h4>
+      <div class="rec-row"><span class="t">Open to opportunities</span><span class="d">Technical support, IT/network operations, cybersecurity — direct hire</span></div>
+    </div>
+
+    <div class="rec-block">
+      <h4>CV</h4>
+      <a href="assets/cv.pdf" download class="btn btn-ghost">Download CV (PDF)</a>
+    </div>
+
+    <div class="rec-cta">
+      <h3>Let's discuss an opportunity</h3>
+      <div class="rec-ctas">
+        <a href="mailto:Naiduaravind169@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="https://wa.me/916309579202" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp: +91 63095 79202</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= LIBRARIES ============================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- ============================= CONFIG ============================= -->
+<script>
+const CONTACT = {
+  email: "Naiduaravind169@gmail.com",
+  phone: "+916309579202",
+  whatsapp: "916309579202",
+  linkedin: "YOUR_LINKEDIN_URL",
+  github: "YOUR_GITHUB_URL"
+};
+
+/* Certificate data — image paths match the flat /assets folder in the repo.
+   "apssdc-catia" now uses assets/cert-catia.jpg — make sure that file is
+   uploaded to the assets folder. */
+const CERTIFICATES = [
+  {
+    id: "ceh-main",
+    title: "Certified Ethical Hacker (CEH)",
+    issuer: "EC-Council",
+    date: "Issued 30 October 2025 · Renewable 01 November 2026",
+    category: "Cybersecurity",
+    verification: "Certification Number ECC3691802457",
+    image: "assets/cert-ceh.jpg",
+    featured: true
+  },
+  {
+    id: "ceh-attendance",
+    title: "Certified Ethical Hacker v12 — Certificate of Attendance",
+    issuer: "EC-Council accredited training center: Hacker School (a subsidiary of Cartel Software)",
+    date: "November 2024",
+    category: "Cybersecurity / Training",
+    verification: "Instructor: Jayanth Betha",
+    image: "assets/cert-attendance.jpg"
+  },
+  {
+    id: "python-millennium",
+    title: "Core Python — Training Certification",
+    issuer: "Millennium Software Solutions Pvt. Ltd.",
+    date: "02 May 2023 – 16 June 2023",
+    category: "Technical Training",
+    verification: "Admin No. MSS/VSP/14273",
+    image: "assets/cert-python.jpg"
+  },
+  {
+    id: "apssdc-catia",
+    title: "Product Design and Drafting by CATIA",
+    issuer: "Andhra Pradesh State Skill Development Corporation (APSSDC)",
+    date: "25–30 October 2021",
+    category: "Technical Training",
+    verification: "Certificate No. PDDC/10/2021-22/211",
+    image: "assets/cert-catia.jpg"
+  },
+  {
+    id: "jntuk-weightlifting",
+    title: "Certificate of Merit — Weight Lifting / Power Lifting / Best Physique",
+    issuer: "Jawaharlal Nehru Technological University, Kakinada (JNTUK)",
+    date: "20–21 December 2021",
+    category: "Achievement",
+    verification: "GMR Institute of Technology, Rajam",
+    image: "assets/cert-powerlifting.jpg"
+  },
+  {
+    id: "avanthi-youthfest",
+    title: "Certificate of Merit — AVENSIS 2K20 National Youth Fest (Kabaddi, Runner-up)",
+    issuer: "Avanthi Institute of Engineering & Technology",
+    date: "14–15 March 2020",
+    category: "Achievement",
+    verification: "",
+    image: "assets/cert-kabaddi.jpg"
+  }
+];
+</script>
+
+<!-- ============================= APP SCRIPT ============================= -->
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* NAV */
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    if(y > lastScroll && y > 200){ nav.classList.add('hide-nav'); } else { nav.classList.remove('hide-nav'); }
+    lastScroll = y;
+  }, { passive:true });
+
+  const burger = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+  burger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  const themeToggle = document.getElementById('theme-toggle');
+  let lightish = false;
+  themeToggle.addEventListener('click', () => {
+    lightish = !lightish;
+    document.documentElement.style.setProperty('--black', lightish ? '#0d1013' : '#07080a');
+    document.documentElement.style.setProperty('--panel', lightish ? '#181c22' : '#0d1116');
+  });
+
+  /* RECRUITER MODE */
+  const recruiterView = document.getElementById('recruiter-view');
+  document.getElementById('recruiter-toggle').addEventListener('click', () => {
+    recruiterView.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('rec-exit').addEventListener('click', () => {
+    recruiterView.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  /* CERTIFICATE MODAL */
+  const certModal = document.getElementById('cert-modal');
+  const certImg = document.getElementById('cert-modal-image');
+  let currentCertImageSrc = '';
+
+  function openCertModal(cert){
+    certImg.src = cert.image;
+    certImg.alt = cert.title;
+    currentCertImageSrc = cert.image;
+    document.getElementById('cert-modal-title').textContent = cert.title;
+    document.getElementById('cert-modal-issuer').textContent = cert.issuer;
+    document.getElementById('cert-modal-date').textContent = cert.date;
+    document.getElementById('cert-modal-category').textContent = cert.category;
+    const verifLabel = document.getElementById('cert-verif-label');
+    const verifVal = document.getElementById('cert-modal-verif');
+    if(cert.verification){
+      verifLabel.style.display = 'block'; verifVal.style.display = 'block'; verifVal.textContent = cert.verification;
+    } else {
+      verifLabel.style.display = 'none'; verifVal.style.display = 'none';
+    }
+    certModal.classList.add('open');
+  }
+  function closeCertModal(){ certModal.classList.remove('open'); }
+  document.getElementById('cert-close').addEventListener('click', closeCertModal);
+  document.getElementById('cert-back').addEventListener('click', closeCertModal);
+  document.getElementById('cert-open-full').addEventListener('click', () => window.open(currentCertImageSrc, '_blank'));
+  certModal.addEventListener('click', (e) => { if(e.target === certModal) closeCertModal(); });
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeCertModal(); });
+
+  /* ---------------------------------------------------------------
+     CERTIFICATE 3D CAROUSEL — now the hero's primary visual.
+     One large "featured" card faces the camera; the rest sit in a
+     ring behind/beside it, matching the reference's big-cert +
+     faded-side-certs composition, but fully interactive (drag /
+     click / arrow keys), same as the previous full gallery.
+  --------------------------------------------------------------- */
+  (function initGallery(){
+    const canvas = document.getElementById('gallery-canvas');
+    const stage = canvas.parentElement;
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x0b0e12, 0.05);
+    const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 100);
+    camera.position.set(0, 0.25, 7.2);
+
+    function resize(){
+      const w = stage.clientWidth, h = stage.clientHeight;
+      if(w === 0 || h === 0) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w/h;
+      camera.updateProjectionMatrix();
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    // guard against the canvas sizing to 0 before layout settles (mobile Chrome)
+    setTimeout(resize, 60);
+    setTimeout(resize, 300);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+    const spot1 = new THREE.SpotLight(0x4f8ffb, 2.6, 20, Math.PI/6, 0.5);
+    spot1.position.set(0, 5, 4); scene.add(spot1);
+    const rim = new THREE.PointLight(0x8fb8ff, 1.1, 20);
+    rim.position.set(-4, 1, -3); scene.add(rim);
+
+    const floorGeo = new THREE.PlaneGeometry(30,30);
+    const floorMat = new THREE.MeshStandardMaterial({ color:0x0a0d11, roughness:0.3, metalness:0.7 });
+    const floor = new THREE.Mesh(floorGeo, floorMat);
+    floor.rotation.x = -Math.PI/2; floor.position.y = -2.0;
+    scene.add(floor);
+
+    const texLoader = new THREE.TextureLoader();
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const n = CERTIFICATES.length;
+    const radius = 4.4;
+    const cardW = 2.05, cardH = 1.48;
+    const cardMeshes = [];
+
+    CERTIFICATES.forEach((cert, i) => {
+      const frameGeo = new THREE.BoxGeometry(cardW+0.09, cardH+0.09, 0.07);
+      const frameMat = new THREE.MeshStandardMaterial({ color:0x232a33, roughness:0.4, metalness:0.75 });
+      const frame = new THREE.Mesh(frameGeo, frameMat);
+
+      const planeGeo = new THREE.PlaneGeometry(cardW, cardH);
+      const placeholderMat = new THREE.MeshBasicMaterial({ color:0x161b21 });
+      const plane = new THREE.Mesh(planeGeo, placeholderMat);
+      plane.position.z = 0.045;
+
+      texLoader.load(
+        cert.image,
+        (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace || tex.colorSpace;
+          plane.material = new THREE.MeshBasicMaterial({ map: tex });
+        },
+        undefined,
+        (err) => { console.warn('Certificate image failed to load:', cert.image, err); }
+      );
+
+      const cardGroup = new THREE.Group();
+      cardGroup.add(frame); cardGroup.add(plane);
+      cardGroup.userData.cert = cert;
+
+      const angle = (i / n) * Math.PI * 2;
+      cardGroup.userData.angle = angle;
+      cardGroup.position.set(Math.sin(angle)*radius, 0, Math.cos(angle)*radius - radius);
+      cardGroup.lookAt(0, 0, -radius);
+
+      group.add(cardGroup);
+      cardMeshes.push(cardGroup);
+    });
+
+    let targetRotation = 0;
+    let currentRotation = 0;
+    let dragging = false;
+    let lastX = 0;
+    let velocity = 0;
+    let activeIndex = 0;
+
+    // start on the featured cert
+    const featuredIdx = CERTIFICATES.findIndex(c => c.featured);
+    function goTo(index){
+      activeIndex = ((index % n) + n) % n;
+      targetRotation = -(activeIndex / n) * Math.PI * 2;
+    }
+
+    canvas.style.cursor = 'grab';
+    canvas.addEventListener('pointerdown', (e) => {
+      dragging = true; lastX = e.clientX; canvas.style.cursor = 'grabbing';
+      canvas.setPointerCapture(e.pointerId);
+    });
+    canvas.addEventListener('pointermove', (e) => {
+      if(!dragging) return;
+      const dx = e.clientX - lastX; lastX = e.clientX;
+      velocity = dx * 0.0045; targetRotation += velocity;
+    });
+    function endDrag(){
+      dragging = false; canvas.style.cursor = 'grab';
+      const step = (Math.PI*2) / n;
+      const idx = Math.round(-targetRotation / step);
+      activeIndex = ((idx % n) + n) % n;
+      targetRotation = -idx * step;
+    }
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointerleave', () => { if(dragging) endDrag(); });
+
+    let downX=0, downY=0;
+    canvas.addEventListener('pointerdown', (e)=>{ downX=e.clientX; downY=e.clientY; });
+    canvas.addEventListener('pointerup', (e) => {
+      const dist = Math.hypot(e.clientX-downX, e.clientY-downY);
+      if(dist < 6){
+        const rect = canvas.getBoundingClientRect();
+        const mouse = new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1, -((e.clientY-rect.top)/rect.height)*2+1);
+        const raycaster = new THREE.Raycaster();
+        raycaster.setFromCamera(mouse, camera);
+        const hits = raycaster.intersectObjects(cardMeshes.map(c=>c.children[1]));
+        if(hits.length){
+          const hitCard = cardMeshes.find(c => c.children[1] === hits[0].object);
+          if(hitCard){
+            const idx = cardMeshes.indexOf(hitCard);
+            if(idx === activeIndex){ openCertModal(hitCard.userData.cert); } else { goTo(idx); }
+          }
+        }
+      }
+    });
+
+    document.getElementById('gal-prev').addEventListener('click', () => goTo(activeIndex - 1));
+    document.getElementById('gal-next').addEventListener('click', () => goTo(activeIndex + 1));
+    window.addEventListener('keydown', (e) => {
+      if(!isElementInViewport(stage)) return;
+      if(e.key === 'ArrowLeft') goTo(activeIndex - 1);
+      if(e.key === 'ArrowRight') goTo(activeIndex + 1);
+      if(e.key === 'Enter') openCertModal(cardMeshes[activeIndex].userData.cert);
+    });
+    function isElementInViewport(el){
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    }
+
+    let touchStartX = 0;
+    canvas.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    canvas.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(dx) > 40){ dx > 0 ? goTo(activeIndex-1) : goTo(activeIndex+1); }
+    }, {passive:true});
+
+    let running = true;
+    document.addEventListener('visibilitychange', () => { running = !document.hidden; });
+
+    function animate(){
+      requestAnimationFrame(animate);
+      if(!running) return;
+      currentRotation += (targetRotation - currentRotation) * 0.08;
+      group.rotation.y = currentRotation;
+
+      cardMeshes.forEach((c, i) => {
+        const isActive = i === activeIndex;
+        const targetScale = isActive ? 1.14 : 0.94;
+        c.scale.x += (targetScale - c.scale.x) * 0.1;
+        c.scale.y += (targetScale - c.scale.y) * 0.1;
+        c.scale.z += (targetScale - c.scale.z) * 0.1;
+        c.position.y += ((isActive ? 0.06 : 0) - c.position.y) * 0.08;
+        c.children[1].material.transparent = true;
+        const targetOpacity = isActive ? 1 : 0.55;
+        if(c.children[1].material.opacity === undefined) c.children[1].material.opacity = 1;
+        c.children[1].material.opacity += (targetOpacity - c.children[1].material.opacity) * 0.08;
+      });
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    goTo(featuredIdx >= 0 ? featuredIdx : 0);
+    // re-run resize once fonts/layout settle to avoid a 0x0 canvas on first paint
+    requestAnimationFrame(resize);
+  })();
+
+  /* MASCOT BOT — greets on load, replays on tap */
+  (function initMascot(){
+    const bot = document.getElementById('mascot-bot');
+    const bubble = document.getElementById('mascot-bubble');
+    if(!bot || !bubble) return;
+
+    const lines = [
+      "Hi, I'm Cipher — Aravind's site sidekick 🤖",
+      "Psst, the certificate gallery is worth a spin →",
+      "Beep boop. Systems secure, all good here 🔒",
+      "Need Aravind directly? WhatsApp is right over there →",
+      "Fun fact: I blink so you know I'm alive 👀"
+    ];
+    let lineIndex = 0;
+    let hideTimer = null;
+
+    function showBubble(){
+      bubble.textContent = lines[lineIndex % lines.length];
+      lineIndex++;
+      bubble.classList.add('show');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => bubble.classList.remove('show'), 4200);
+    }
+
+    bot.addEventListener('click', showBubble);
+
+    // greet automatically once, shortly after the page settles
+    setTimeout(showBubble, 1800);
+  })();
+
+  /* Reveal-on-scroll */
+  if(!prefersReducedMotion && window.gsap){
+    const revealTargets = document.querySelectorAll('.section-head, .timeline-item, .skill-card, .project-card, .about-layout, .dash-card');
+    revealTargets.forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(16px)'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          gsap.to(entry.target, { opacity:1, y:0, duration:0.7, ease:'power2.out' });
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12 });
+    revealTargets.forEach(el => io.observe(el));
+  }
+
+})();
+</script>
+</body>
+</html>
