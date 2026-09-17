@@ -1,0 +1,19 @@
+{
+  "name": "reviewpilot-backend",
+  "version": "1.0.0",
+  "description": "Backend API for ReviewPilot: waitlist storage, AI-drafted review replies, review sync.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
